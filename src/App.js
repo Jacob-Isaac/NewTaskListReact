@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import "./index.css";
 import Form from "./Form";
@@ -12,14 +13,20 @@ const taskList = [
   { id: 1, content: "zjeść ciastko", done: false },
   { id: 2, content: "zjeść bułkę", done: true },
 ];
-const hideTasks = false;
 
 function App() {
+
+  const [hideTasks, setHide] = React.useState(false);
+
+  const hideAllTasks = () => {
+    setHide(hideTasks => !hideTasks);
+  };
+
   return (
     <BodyContainer>
       <Header />
       <MainContainer>
-        <Buttons />
+        <Buttons hideTasks={hideTasks} hideAllTasks = {hideAllTasks} />
         <Form />
         <Tasks taskList={taskList} hideTasks={hideTasks} />
         <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
