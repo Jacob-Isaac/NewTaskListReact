@@ -1,7 +1,7 @@
 import "./style.css";
 
 const Tasks = (props) => (
-  <ul id="TUTAJ FUNKCJONALNOSC LISTY" className="tasks">
+  <ul className="tasks">
     {props.taskList.map((task) => (
       <li
         key={task.id}
@@ -21,7 +21,9 @@ const Tasks = (props) => (
         >
           &nbsp;&nbsp;{task.content}
         </span>
-        <button className="js-removeTask tasks__buttonProperties">🗑️</button>
+        <button 
+        className="js-removeTask tasks__buttonProperties"  
+        onClick={() => props.removeTask(task.id)}>🗑️</button>
         <p></p>
       </li>
     ))}
