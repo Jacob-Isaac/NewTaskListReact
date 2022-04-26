@@ -16,6 +16,7 @@ function App() {
     { id: 1, content: "zjeść ciastko", done: false },
     { id: 2, content: "zjeść bułkę", done: true },
   ]);
+ 
 
   const hideAllTasks = () => {
     setHide(hideTasks => !hideTasks);
@@ -25,13 +26,25 @@ function App() {
     setTasks(taskList => taskList.filter(task => task.id !== id));
   };
 
+  const tickTask = (id) => {
+    setTasks(taskList => taskList.map(task => {
+      if (task.id === id) {
+        return {...task, done: !task.done};
+      }
+    }));
+  };
+
   return (
     <BodyContainer>
       <Header />
       <MainContainer>
         <Buttons hideTasks={hideTasks} hideAllTasks={hideAllTasks} />
         <Form />
-        <Tasks taskList={taskList} hideTasks={hideTasks} removeTask={removeTask} />
+        <Tasks 
+        taskList={taskList}
+         hideTasks={hideTasks} 
+         removeTask={removeTask}
+         tickTask={tickTask} />
         <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
       </MainContainer>
     </BodyContainer>
