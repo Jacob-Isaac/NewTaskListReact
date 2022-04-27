@@ -1,4 +1,5 @@
 import React from "react";
+import Tasks from "../Tasks";
 import "./style.css";
 
 const Form = ({addNewTask}) => 
@@ -10,6 +11,11 @@ const onFormSubmit = (event) => {
   event.preventDefault();
   addNewTask(newTask.trim());
   setNewTask("");
+  document.getElementById("input").focus();
+  if (newTask.length > 68)
+  {
+  document.getElementById("ul").classList.add("tasks__smallText");
+  }
 };
 
   return (
@@ -17,9 +23,10 @@ const onFormSubmit = (event) => {
       <p>
         <label>
           <input 
+          id = "input"
           value = {newTask} 
           onChange = {(event) => setNewTask(event.target.value)}
-          maxlength={178} 
+          maxLength= {178} 
          />
         </label>
       </p>

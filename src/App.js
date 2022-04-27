@@ -13,8 +13,11 @@ function App() {
 
   const [hideTasks, setHide] = React.useState(false);
   const [showOrHide, setButtonText] = React.useState(false);
-  const [taskList, setTasks] = React.useState(    [{ id: 1, content: "zjeść ciastko", done: false },
-  { id: 2, content: "zjeść bułkę", done: true },]);
+  const [taskList, setTasks] = React.useState([{
+    id: 1,
+    content: "pierwsze zadanie",
+    done: false
+  },]);
 
 
   const hideAllTasks = () => {
@@ -22,14 +25,16 @@ function App() {
   };
 
   const addNewTask = (newTask) => {
-   setTasks(taskList => [...taskList, 
-    { id: taskList.length === 0 ? 1 : taskList[taskList.length -1 ].id +1, 
-      number: taskList.length,
-      length: taskList[taskList.length -1 ].id,
-      content: newTask, 
-      done: false },
-    ]);
-  };
+   if (newTask === "")  
+    return null 
+      setTasks(taskList => [...taskList,
+      {
+        id: taskList.length === 0 ? 1 : taskList[taskList.length - 1].id + 1,
+        content: newTask,
+        done: false
+      },
+      ]);
+  }; // ogarnąć jak zrobic zeby przy pustym useState to działało 
 
   const doneAllTasks = () => {
     setButtonText(showOrHide => !showOrHide)
@@ -65,7 +70,7 @@ function App() {
           hideAllTasks={hideAllTasks}
           showOrHide={showOrHide}
           doneAllTasks={doneAllTasks} />
-        <Form  addNewTask={addNewTask} />
+        <Form addNewTask={addNewTask} />
         <Tasks
           taskList={taskList}
           hideTasks={hideTasks}
