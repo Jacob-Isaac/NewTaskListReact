@@ -13,14 +13,22 @@ function App() {
 
   const [hideTasks, setHide] = React.useState(false);
   const [showOrHide, setButtonText] = React.useState(false);
-  const [taskList, setTasks] = React.useState([
-    { id: 1, content: "zjeść ciastko", done: false },
-    { id: 2, content: "zjeść bułkę", done: true },
-  ]);
+  const [taskList, setTasks] = React.useState(    [{ id: 1, content: "zjeść ciastko", done: false },
+  { id: 2, content: "zjeść bułkę", done: true },]);
 
 
   const hideAllTasks = () => {
     setHide(hideTasks => !hideTasks);
+  };
+
+  const addNewTask = (newTask) => {
+   setTasks(taskList => [...taskList, 
+    { id: taskList.length === 0 ? 1 : taskList[taskList.length -1 ].id +1, 
+      number: taskList.length,
+      length: taskList[taskList.length -1 ].id,
+      content: newTask, 
+      done: false },
+    ]);
   };
 
   const doneAllTasks = () => {
@@ -57,7 +65,7 @@ function App() {
           hideAllTasks={hideAllTasks}
           showOrHide={showOrHide}
           doneAllTasks={doneAllTasks} />
-        <Form />
+        <Form  addNewTask={addNewTask} />
         <Tasks
           taskList={taskList}
           hideTasks={hideTasks}
