@@ -6,18 +6,25 @@ import Tasks from "./Tasks";
 import Header from "./Header";
 import Footer from "./Footer";
 import Buttons from "./Buttons";
-import BodyContainer from "./BodyContainer";
+// import BodyContainer from "./BodyContainer";
 import MainContainer from "./MainContainer";
 
 function App() {
+ 
+  
+
 
   const [hideTasks, setHide] = React.useState(false);
   const [showOrHide, setButtonText] = React.useState(false);
   const [taskList, setTasks] = React.useState([{
     id: 1,
-    content: "pierwsze zadanie",
+    content: "zjedz kanapke",
     done: false
   },]);
+
+  localStorage.setItem("taskList", JSON.stringify(taskList));
+  // JSON.parse(localStorage.getItem("taskList"))
+
 
 
   const hideAllTasks = () => {
@@ -62,8 +69,8 @@ function App() {
 
 
   return (
-    <BodyContainer>
-      <Header />
+    <>
+     <Header />
       <MainContainer>
         <Buttons
           hideTasks={hideTasks}
@@ -78,7 +85,7 @@ function App() {
           tickTask={tickTask} />
         <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
       </MainContainer>
-    </BodyContainer>
+    </>
   );
 }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import Tasks from "../Tasks";
 import "./style.css";
 
 const Form = ({addNewTask}) => 
