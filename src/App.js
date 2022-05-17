@@ -16,15 +16,9 @@ function App() {
 
   const [hideTasks, setHide] = React.useState(false);
   const [showOrHide, setButtonText] = React.useState(false);
-  const [taskList, setTasks] = React.useState([{
-    id: 1,
-    content: "zjedz kanapke",
-    done: false
-  },]);
+  const [taskList, setTasks] = React.useState(JSON.parse(localStorage.getItem("taskList")) || []);
 
   localStorage.setItem("taskList", JSON.stringify(taskList));
-  // JSON.parse(localStorage.getItem("taskList"))
-
 
 
   const hideAllTasks = () => {
@@ -77,7 +71,8 @@ function App() {
           hideAllTasks={hideAllTasks}
           showOrHide={showOrHide}
           doneAllTasks={doneAllTasks} />
-        <Form addNewTask={addNewTask} />
+        <Form addNewTask={addNewTask}
+        taskList={taskList} />
         <Tasks
           taskList={taskList}
           hideTasks={hideTasks}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-const Form = ({addNewTask}) => 
+const Form = ({addNewTask, taskList}) => 
 {
 
 const [newTask, setNewTask] = React.useState("");
@@ -15,6 +15,7 @@ const onFormSubmit = (event) => {
   {
   document.getElementById("ul").classList.add("tasks__smallText");
   }
+  
 };
 
   return (
