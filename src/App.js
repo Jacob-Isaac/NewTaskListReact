@@ -6,7 +6,6 @@ import Tasks from "./Tasks";
 import Header from "./Header";
 import Footer from "./Footer";
 import Buttons from "./Buttons";
-// import BodyContainer from "./BodyContainer";
 import MainContainer from "./MainContainer";
 
 function App() {
@@ -35,7 +34,7 @@ function App() {
         done: false
       },
       ]);
-  }; // ogarnąć jak zrobic zeby przy pustym useState to działało 
+  };
 
   const doneAllTasks = () => {
     setButtonText(showOrHide => !showOrHide)
