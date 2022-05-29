@@ -15,7 +15,6 @@ const onFormSubmit = (event) => {
   {
   document.getElementById("ul").classList.add("tasks__smallText");
   }
-  
 };
 
   return (
