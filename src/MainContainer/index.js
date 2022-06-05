@@ -1,8 +1,9 @@
+import { StandardBox } from "../styled";
 
 const MainContainer = ({children}) => (
-<main className="allBoxesProperties"> 
+<StandardBox as="main"> 
 {children}
-</main>
+</StandardBox>
 );
 
 export default MainContainer;
