@@ -1,7 +1,7 @@
 import React from "react";
-import "./style.css";
+import { FormButton } from "./styled";
 
-const Form = ({addNewTask, taskList}) => 
+const Form = ({addNewTask}) => 
 {
 
 const [newTask, setNewTask] = React.useState("");
@@ -29,9 +29,9 @@ const onFormSubmit = (event) => {
          />
         </label>
       </p>
-      <p className="formButton">
-        <button>DODAJ !</button>
-      </p>
+      <FormButton>
+        DODAJ !
+      </FormButton>
     </form>
   );
 };
