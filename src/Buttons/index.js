@@ -1,10 +1,25 @@
 import { Flex, FlexButton } from "./styled";
 
-const Buttons = ({hideAllTasks, hideTasks, doneAllTasks, showOrHide}) => (
+const Buttons = ({ taskList, disabled, hideAllTasks, hideTasks, doneAllTasks, showOrHide }) => (
   <Flex>
-    <FlexButton onClick={hideAllTasks}>{hideTasks ? "Pokaż" : "Ukryj"} ukończone</FlexButton>
-    <FlexButton onClick={doneAllTasks}>{showOrHide ? "Odznacz" : "Ukończ"} wszystkie</FlexButton>
+
+    <FlexButton 
+      disabled={
+        taskList.length >= 1 && taskList.some((task) => (task.done === true))
+          ? false
+          : true
+        }
+      onClick={hideAllTasks}>
+      {hideTasks ? "Pokaż" : "Ukryj"} ukończone
+    </FlexButton>
+
+    <FlexButton disabled={taskList.length === 0 && true} onClick={doneAllTasks}>
+      {showOrHide ? "Odznacz" : "Ukończ"} wszystkie
+    </FlexButton>
+
   </Flex>
 );
 
 export default Buttons;
+
+

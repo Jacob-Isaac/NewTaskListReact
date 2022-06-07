@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 
 export const Flex = styled.div`
@@ -11,13 +11,18 @@ export const Flex = styled.div`
 }
 `;
 
-export const FlexButton = styled.div`
+export const FlexButton = styled.button`
     max-width: 100px;
     margin: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 
+    ${({ disabled }) => disabled === false && css`
     &:hover {
     color: rgb(158, 158, 158);
-    cursor: pointer;
     }
+    `}
+
 `;
 

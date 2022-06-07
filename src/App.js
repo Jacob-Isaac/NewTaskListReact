@@ -10,9 +10,6 @@ import MainContainer from "./MainContainer";
 
 function App() {
  
-  
-
-
   const [hideTasks, setHide] = React.useState(false);
   const [showOrHide, setButtonText] = React.useState(false);
   const [taskList, setTasks] = React.useState(JSON.parse(localStorage.getItem("taskList")) || []);
@@ -21,8 +18,6 @@ function App() {
     localStorage.setItem("taskList", JSON.stringify(taskList));
      }, [taskList]);
   
-
-
   const hideAllTasks = () => {
     setHide(hideTasks => !hideTasks);
   };
@@ -72,7 +67,8 @@ function App() {
           hideTasks={hideTasks}
           hideAllTasks={hideAllTasks}
           showOrHide={showOrHide}
-          doneAllTasks={doneAllTasks} />
+          doneAllTasks={doneAllTasks}
+          taskList={taskList} />
         <Form addNewTask={addNewTask}/>
         <Tasks
           taskList={taskList}
