@@ -1,9 +1,9 @@
-import { StandardBox } from "../styled";
+import { Box } from "./styled";
 
 const MainContainer = ({children}) => (
-<StandardBox as="main"> 
+<Box as="main"> 
 {children}
-</StandardBox>
+</Box>
 );
 
 export default MainContainer;
