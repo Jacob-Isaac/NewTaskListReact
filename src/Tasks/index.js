@@ -1,15 +1,15 @@
 import { TasksList, Task, Button, Content } from "./styled";
 
-const Tasks = (props) => (
+const Tasks = ({taskList, hideTasks, tickTask, removeTask}) => (
   <TasksList id="ul">
-    {props.taskList.map((task) => (
+    {taskList.map((task) => (
       <Task
         key={task.id}
-        hide = {task.done && props.hideTasks}
+        hide = {task.done && hideTasks}
       >
-        <Button onClick={() => props.tickTask(task.id)}>✔</Button>
+        <Button onClick={() => tickTask(task.id)}>✔</Button>
         <Content done = {task.done}>&nbsp;&nbsp;{task.content}</Content>
-        <Button onClick={() => props.removeTask(task.id)}>🗑️</Button>
+        <Button onClick={() => removeTask(task.id)}>🗑️</Button>
         <p></p>
       </Task>
     ))}
