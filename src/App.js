@@ -17,9 +17,9 @@ function App() {
   const [showOrHide, setButtonText] = React.useState(false);
   const [taskList, setTasks] = React.useState(JSON.parse(localStorage.getItem("taskList")) || []);
 
-  // React.useEffect(() => {
+   React.useEffect(() => {
     localStorage.setItem("taskList", JSON.stringify(taskList));
-    // }, [taskList]);
+     }, [taskList]);
   
 
 
@@ -73,8 +73,7 @@ function App() {
           hideAllTasks={hideAllTasks}
           showOrHide={showOrHide}
           doneAllTasks={doneAllTasks} />
-        <Form addNewTask={addNewTask}
-        taskList={taskList} />
+        <Form addNewTask={addNewTask}/>
         <Tasks
           taskList={taskList}
           hideTasks={hideTasks}
