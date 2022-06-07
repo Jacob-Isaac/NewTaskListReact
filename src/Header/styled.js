@@ -9,7 +9,7 @@ export const NavigationBox = styled.div`
     margin-bottom: 40px;
     background-color: rgb(255 255 255 / 80%);
     min-width: 250px;
-    @media (max-width: 968px) {
+    @media (max-width: 800px) {
       box-shadow: 5px 5px 10px;
       background-color: rgb(255 255 255 / 80%);
       display: flex;
@@ -26,7 +26,7 @@ export const NavigationBox = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 15px;
-    font-family: "Supermercado One", cursive, sans-serif;
+    font-family: "Montserrat", cursive, sans-serif;
     font-size: 20px;
     text-decoration: none;
     color: black;

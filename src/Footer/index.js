@@ -1,9 +1,10 @@
+import {TextSize} from "./styled";
 
 const Footer = (props) => (
 <footer>
-<p>
+<TextSize>
   {props.text}
-</p>
+</TextSize>
 </footer>
 );
 

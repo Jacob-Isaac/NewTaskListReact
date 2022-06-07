@@ -6,7 +6,7 @@ export const Flex = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    @media (max-width: 968px) {
+    @media (max-width: 800px) {
         flex-direction: column;
 }
 `;

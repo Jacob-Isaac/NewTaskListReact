@@ -17,6 +17,7 @@ export const Button = styled.button`
 
 export const Content = styled.span`
     flex-grow: 1;
+    margin: 5px;
     ${({ done }) => done && css`
     text-decoration: line-through;
     `}
