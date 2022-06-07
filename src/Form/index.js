@@ -3,18 +3,14 @@ import { FormButton } from "./styled";
 
 const Form = ({addNewTask}) => 
 {
-
+const focus = React.useRef(null);
 const [newTask, setNewTask] = React.useState("");
 
 const onFormSubmit = (event) => {
   event.preventDefault();
   addNewTask(newTask.trim());
   setNewTask("");
-  document.getElementById("input").focus();
-  if (newTask.length > 68)
-  {
-  document.getElementById("ul").classList.add("tasks__smallText");
-  }
+  focus.current.focus();
 };
 
   return (
@@ -23,6 +19,7 @@ const onFormSubmit = (event) => {
         <label>
           <input 
           id = "input"
+          ref={focus}
           value = {newTask} 
           onChange = {(event) => setNewTask(event.target.value)}
           maxLength= {178} 
