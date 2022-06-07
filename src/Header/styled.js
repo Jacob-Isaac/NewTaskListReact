@@ -1,26 +1,24 @@
-.navigation {
+import { StandardBox } from "../styled";
+import styled from "styled-components";
+
+export const NavigationBox = styled.div`
+    ${StandardBox}
     text-align: center;
-    box-shadow: 5px 5px 10px;
     padding: 20px;
-    margin: auto;
     margin-top: 5px;
     margin-bottom: 40px;
     background-color: rgb(255 255 255 / 80%);
-    width: 80%;
     min-width: 250px;
-  }
-    
-  @media (max-width: 968px) {
-    .navigation {
+    @media (max-width: 968px) {
       box-shadow: 5px 5px 10px;
       background-color: rgb(255 255 255 / 80%);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-    }
   }
-  
-  .navigation__links {
+    `;
+
+  export const NavigationButton = styled.button`
     background-color: transparent;
     border: none;
     margin-left: 22px;
@@ -34,16 +32,16 @@
     color: black;
     font-weight: bolder;
     transition: all 0.01s ease-in-out;
-  }
-  .navigation__links:hover {
+    &:hover {
     color: rgb(158, 158, 158);
     cursor: pointer;
   }
-  .navigation__links:active {
+    &:active {
     color: rgb(158, 158, 158);
     transform: scale(0.8);
   }
+  `;
 
 
 
-  
+

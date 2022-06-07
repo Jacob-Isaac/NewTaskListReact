@@ -1,18 +1,19 @@
-import "./style.css";
+import { NavigationBox, NavigationButton } from "./styled";
 
 const Header = () => (
 <header>
-      <div className="navigation allBoxesProperties">
-        <button className="navigation__links">
+      <NavigationBox> 
+        {/* StandardBox */}
+        <NavigationButton>
           <span>Zapisz</span>
-        </button>
-        <button className="navigation__links">
+        </NavigationButton>
+        <NavigationButton>
           <span>Załaduj</span>
-        </button>
-        <button className="navigation__links">
+        </NavigationButton>
+        <NavigationButton>
           <span>Usuń</span>
-        </button>
-      </div>
+        </NavigationButton>
+      </NavigationBox>
     </header>
 );
 
