@@ -1,33 +1,19 @@
-import "./style.css";
+import { TasksList, Task, Button, Content } from "./styled";
 
 const Tasks = (props) => (
-  <ul id="ul" className="tasks">
+  <TasksList id="ul">
     {props.taskList.map((task) => (
-      <li
+      <Task
         key={task.id}
-        className={`${task.done && props.hideTasks === true
-            ? "taskHide"
-            : "tasks__flex tasks__border-bottom"
-          }`}
+        hide = {task.done && props.hideTasks}
       >
-        <button
-          className="tasks__buttonProperties"
-          onClick={() => props.tickTask(task.id)}>✔</button>
-        <span
-          className={`${task.done
-              ? "taskDone tasks__flexGrowContent"
-              : "tasks__flexGrowContent"
-            }`}
-        >
-          &nbsp;&nbsp;{task.content}
-        </span>
-        <button
-          className="tasks__buttonProperties"
-          onClick={() => props.removeTask(task.id)}>🗑️</button>
+        <Button onClick={() => props.tickTask(task.id)}>✔</Button>
+        <Content done = {task.done}>&nbsp;&nbsp;{task.content}</Content>
+        <Button onClick={() => props.removeTask(task.id)}>🗑️</Button>
         <p></p>
-      </li>
+      </Task>
     ))}
-  </ul>
+  </TasksList>
 );
 
 export default Tasks;
