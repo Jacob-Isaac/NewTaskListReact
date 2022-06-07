@@ -1,8 +1,7 @@
-import styled from "styled-components";
+import {css} from "styled-components";
 
 
-
-export const StandardBox = styled.div`
+export const StandardBox = css`
     color: rgb(24, 24, 24);
     box-shadow: 5px 5px 10px;
     margin: auto;
@@ -13,6 +12,6 @@ export const StandardBox = styled.div`
     min-width: 250px;
     width: 80%;
     border-radius: 17px;
-    ` ;
+`;
   
   
