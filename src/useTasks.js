@@ -3,7 +3,7 @@ import React from "react";
 const useTasks = () => {
 
     const [showOrHide, setButtonText] = React.useState(false);
-    const [taskList, setTasks] = React.useState(JSON.parse(localStorage.getItem("taskList")) || []);
+    const [taskList, setTasks] = React.useState(JSON.parse(localStorage.getItem("taskList")) || '[]');
 
     React.useEffect(() => {
         localStorage.setItem("taskList", JSON.stringify(taskList));
