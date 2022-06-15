@@ -6,6 +6,10 @@ const Form = ({addNewTask}) =>
 const focus = React.useRef(null);
 const [newTask, setNewTask] = React.useState("");
 
+React.useEffect(() => {
+  focus.current.focus();
+   }, []);
+
 const onFormSubmit = (event) => {
   event.preventDefault();
   addNewTask(newTask.trim());
