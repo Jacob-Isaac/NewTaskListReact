@@ -14,4 +14,3 @@ export const StandardBox = css`
     border-radius: 17px;
 `;
   
-  

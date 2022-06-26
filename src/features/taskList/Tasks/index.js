@@ -4,7 +4,7 @@ const Tasks = ({taskList, hideTasks, tickTask, removeTask}) => (
   <TasksList id="ul">
     {taskList.map((task) => (
       <Task
-        key={task.id}
+        key = {task.id}
         hide = {task.done && hideTasks}
       >
         <Button onClick={() => tickTask(task.id)}>✔</Button>

@@ -1,4 +1,4 @@
-import { StandardBox } from "../styled";
+import { StandardBox } from "../../styled";
 import styled from "styled-components";
 
 export const NavigationBox = styled.div`

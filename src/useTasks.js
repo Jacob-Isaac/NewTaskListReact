@@ -43,7 +43,6 @@ const useTasks = () => {
            return task;
          }));
        };
-       
        return {taskList, showOrHide, addNewTask, doneAllTasks, removeTask, tickTask}
 };
 
