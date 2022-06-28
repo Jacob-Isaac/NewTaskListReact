@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 
 
-export const Flex = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,7 +11,7 @@ export const Flex = styled.div`
 }
 `;
 
-export const FlexButton = styled.button`
+export const Button = styled.button`
     max-width: 100px;
     margin: 10px;
     background-color: transparent;

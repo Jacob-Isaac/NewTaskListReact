@@ -3,23 +3,32 @@ import React from "react";
 const useTasks = () => {
 
     const [showOrHide, setButtonText] = React.useState(false);
-    const [taskList, setTasks] = React.useState(JSON.parse(localStorage.getItem("taskList")) || '[]');
-
+    const [taskList, setTasks] = React.useState();
+    // React.useEffect(() => {
+    //   const array = JSON.parse(localStorage.getItem("taskList"));
+    //   if (!array)
+    //   {setTasks([])}
+    //   if (array.isArray())
+    //   {setTasks(JSON.parse(localStorage.getItem("taskList")))}
+    //   else
+    //   {setTasks([])}
+    //    }, []);
+    // zrobić sprawdzenie czy dane w storage są array (.isArray()) jesli tak to dopiero get item , jesli nie to pusta tablica 
     React.useEffect(() => {
         localStorage.setItem("taskList", JSON.stringify(taskList));
          }, [taskList]);
 
-    const addNewTask = (newTask) => {
-        if (newTask === "")  
-         return null 
-           setTasks(taskList => [...taskList,
-           {
-             id: taskList.length === 0 ? 1 : taskList[taskList.length - 1].id + 1,
-             content: newTask,
-             done: false
-           },
-           ]);
-       };
+    // const addNewTask = (newTask) => {
+    //     if (newTask === "")  
+    //      return null 
+    //        setTasks(taskList => [...taskList,
+    //        {
+    //          id: taskList.length === 0 ? 1 : taskList[taskList.length - 1].id + 1,
+    //          content: newTask,
+    //          done: false
+    //        },
+    //        ]);
+    //    };
      
        const doneAllTasks = () => {
          setButtonText(showOrHide => !showOrHide)
@@ -43,7 +52,7 @@ const useTasks = () => {
            return task;
          }));
        };
-       return {taskList, showOrHide, addNewTask, doneAllTasks, removeTask, tickTask}
+       return {taskList, showOrHide, doneAllTasks, removeTask, tickTask}
 };
 
 export default useTasks;

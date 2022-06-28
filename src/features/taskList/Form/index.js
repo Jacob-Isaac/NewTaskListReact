@@ -1,41 +1,56 @@
 import React from "react";
-import { FormButton } from "./styled";
+import { nanoid } from "@reduxjs/toolkit";
+import { useDispatch } from "react-redux";
+import { addTask } from "../tasksSlice";
+import { SubmitButton } from "./styled";
 
-const Form = ({addNewTask}) => 
-{
-const focus = React.useRef(null);
-const [newTask, setNewTask] = React.useState("");
 
-React.useEffect(() => {
-  focus.current.focus();
-   }, []);
+const Form = () => {
+  const focus = React.useRef(null);
+  const [newTask, setNewTask] = React.useState("");
+  const newTaskTrimmed = newTask.trim();
+  const dispatch = useDispatch();
 
-const onFormSubmit = (event) => {
-  event.preventDefault();
-  addNewTask(newTask.trim());
-  setNewTask("");
-  focus.current.focus();
-};
+  React.useEffect(() => {
+    focus.current.focus();
+  }, []);
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    if (newTaskTrimmed === "") {
+      focus.current.focus();
+      return null;
+    }
+
+    dispatch(
+      addTask({
+        content: newTaskTrimmed,
+        done: false,
+        id: nanoid(),
+      })
+    );
+
+    setNewTask("");
+    focus.current.focus();
+  };
 
   return (
-    <form onSubmit = {onFormSubmit} >
+    <form onSubmit={onFormSubmit}>
       <p>
         <label>
-          <input 
-          id = "input"
-          ref={focus}
-          value = {newTask} 
-          onChange = {(event) => setNewTask(event.target.value)}
-          maxLength= {178} 
-         />
+          <input
+            id="input"
+            ref={focus}
+            value={newTask}
+            onChange={(event) => setNewTask(event.target.value)}
+            maxLength={178}
+          />
         </label>
       </p>
-      <FormButton>
-        DODAJ !
-      </FormButton>
+      <SubmitButton>DODAJ !</SubmitButton>
     </form>
   );
 };
-
 
 export default Form;

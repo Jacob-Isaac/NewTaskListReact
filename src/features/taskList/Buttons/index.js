@@ -1,24 +1,34 @@
-import { Flex, FlexButton } from "./styled";
+import { Wrapper, Button } from "./styled";
+import {useSelector, useDispatch} from "react-redux";
+import { selectTasks, hideAllTasks } from "../tasksSlice";
 
-const Buttons = ({ taskList, disabled, hideAllTasks, hideTasks, doneAllTasks, showOrHide }) => (
-  <Flex>
 
-    <FlexButton 
-      disabled={
-        taskList.length >= 1 && taskList.some((task) => (task.done === true))
-          ? false
-          : true
-        }
-      onClick={hideAllTasks}>
-      {hideTasks ? "Pokaż" : "Ukryj"} ukończone
-    </FlexButton>
 
-    <FlexButton disabled={taskList.length === 0 && true} onClick={doneAllTasks}>
+const Buttons = ({doneAllTasks, showOrHide }) => {
+
+  const {taskList, hideTask} = useSelector(selectTasks);
+  const dispatch = useDispatch();
+
+  return (
+  <Wrapper>
+
+    <Button 
+       disabled={
+         taskList.length >= 1 && taskList.some((task) => (task.done === true))
+           ? false
+           : true
+         }
+      onClick={() => dispatch(hideAllTasks())}>
+      {hideTask ? "Pokaż" : "Ukryj"} ukończone
+    </Button>
+
+    <Button disabled={taskList.length === 0 && true} onClick={doneAllTasks}>
       {showOrHide ? "Odznacz" : "Ukończ"} wszystkie
-    </FlexButton>
+    </Button>
 
-  </Flex>
-);
+  </Wrapper>
+  );
+}
 
 export default Buttons;
 

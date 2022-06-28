@@ -1,18 +1,18 @@
-import { NavigationBox, NavigationButton } from "./styled";
+import { NavigationBox, Button } from "./styled";
 
 const Header = () => (
 <header>
       <NavigationBox> 
         {/* StandardBox */}
-        <NavigationButton>
+        <Button>
           <span>Zapisz</span>
-        </NavigationButton>
-        <NavigationButton>
+        </Button>
+        <Button>
           <span>Załaduj</span>
-        </NavigationButton>
-        <NavigationButton>
+        </Button>
+        <Button>
           <span>Usuń</span>
-        </NavigationButton>
+        </Button>
       </NavigationBox>
     </header>
 );

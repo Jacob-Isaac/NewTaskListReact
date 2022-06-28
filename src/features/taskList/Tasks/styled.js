@@ -26,7 +26,7 @@ export const Content = styled.span`
 }
     `;
 
-export const TasksList = styled.ul`     
+export const TaskList = styled.ul`     
     text-align: left;
     list-style-type: none;
     margin-right: 35px;

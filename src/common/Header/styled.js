@@ -18,7 +18,7 @@ export const NavigationBox = styled.div`
   }
     `;
 
-  export const NavigationButton = styled.button`
+  export const Button = styled.button`
     background-color: transparent;
     border: none;
     margin-left: 22px;
