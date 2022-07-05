@@ -7,23 +7,36 @@ const taskListSlice = createSlice({
     hideTask: false,
   },
   reducers: {
-    addTask: (previousState, action) => {
-      previousState.taskList.push(action.payload);
+    addTask: (state, action) => {
+      state.taskList.push(action.payload);
     },
     hideAllTasks: (state) => {
     state.hideTask = !state.hideTask;
     },
-    // removeTask: (state) => {
-    //   (taskList => taskList.filter(task => task.id !== id));
-    //   state.hideTasks = !state.hideTasks;
-    //   },
-  },
+    tickTask: (state, action) => {
+      const index = state.taskList.findIndex(task => task.id === action.payload);
+   state.taskList[index].done = !state.taskList[index].done;
+      },
+     removeTask: (state, action) => {
+      const index = state.taskList.findIndex(task => task.id === action.payload);
+     state.taskList = [...state.taskList.slice(0, index), ...state.taskList.slice(index + 1)];
+     },
+    //  doneAllTasks: (state, action) => {
+    //   setButtonText(showOrHide => !showOrHide)
+    //   setTasks(taskList => taskList.map(task => {
+    //     if (showOrHide === false) {
+    //       return { ...task, done: true };
+    //     }
+    //     return { ...task, done: false };
+    //   }));
+    //  },
+    },
 });
 
-// DODAĆ TICKTASK, REMOVETASK, HIDESHOWTASKS 
+// DONEALLTASKS
 //+ NA KONCU ZALEZNOSCI KTORYCH NIE MA U KRZYSZTOFA A U MNIE SĄ
 
-export const { addTask, hideAllTasks} = taskListSlice.actions;
+export const { addTask, hideAllTasks, tickTask, removeTask} = taskListSlice.actions;
 
 export const selectTasks = (state) => state.taskList;
 
