@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const taskListSlice = createSlice({
+  
   name: "taskList",
   initialState: {
     taskList: [],
     hideTask: false,
     showOrHide: false,
   },
+
   reducers: {
     addTask: (state, action) => {
       state.taskList.push(action.payload);

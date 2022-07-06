@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { addTask } from "../tasksSlice";
 import { SubmitButton } from "./styled";
 
-
 const Form = () => {
   const focus = React.useRef(null);
   const [newTask, setNewTask] = React.useState("");
