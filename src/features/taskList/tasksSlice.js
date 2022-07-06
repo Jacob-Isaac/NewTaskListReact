@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const taskListSlice = createSlice({
-  
   name: "taskList",
   initialState: {
     taskList: [],
@@ -34,15 +33,13 @@ const taskListSlice = createSlice({
     doneAllTasks: (state) => {
       state.showOrHide = !state.showOrHide;
       if (state.showOrHide === true) {
-        state.taskList = state.taskList.map((task) => ({
-          ...task,
-          done: true,
-        }));
+        for (const task of state.taskList) {
+          task.done = true;
+        }
       } else {
-        state.taskList = state.taskList.map((task) => ({
-          ...task,
-          done: false,
-        }));
+        for (const task of state.taskList) {
+          task.done = false;
+        }
       }
     },
   },
@@ -52,5 +49,7 @@ export const { addTask, hideAllTasks, tickTask, removeTask, doneAllTasks } =
   taskListSlice.actions;
 
 export const selectTasks = (state) => state.taskList;
+export const selectAreTasksEmpty = (state) =>
+  selectTasks(state).taskList.length === 0;
 
 export default taskListSlice.reducer;
