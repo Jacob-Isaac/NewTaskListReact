@@ -9,22 +9,18 @@ const taskListSlice = createSlice({
   },
 
   reducers: {
-    addTask: (state, action) => {
-      state.taskList.push(action.payload);
+    addTask: (state, { payload: newTask }) => {
+      state.taskList.push(newTask);
     },
     hideAllTasks: (state) => {
       state.hideTask = !state.hideTask;
     },
-    tickTask: (state, action) => {
-      const index = state.taskList.findIndex(
-        (task) => task.id === action.payload
-      );
+    tickTask: (state, { payload: id }) => {
+      const index = state.taskList.findIndex((task) => task.id === id);
       state.taskList[index].done = !state.taskList[index].done;
     },
-    removeTask: (state, action) => {
-      const index = state.taskList.findIndex(
-        (task) => task.id === action.payload
-      );
+    removeTask: (state, { payload: id }) => {
+      const index = state.taskList.findIndex((task) => task.id === id);
       state.taskList = [
         ...state.taskList.slice(0, index),
         ...state.taskList.slice(index + 1),
@@ -42,11 +38,22 @@ const taskListSlice = createSlice({
         }
       }
     },
+    fetchExampleTasks: () => {},
+    setTaskList: (state, { payload: exampleTasks }) => {
+      state.taskList = exampleTasks;
+    },
   },
 });
 
-export const { addTask, hideAllTasks, tickTask, removeTask, doneAllTasks } =
-  taskListSlice.actions;
+export const {
+  addTask,
+  hideAllTasks,
+  tickTask,
+  removeTask,
+  doneAllTasks,
+  fetchExampleTasks,
+  setTaskList,
+} = taskListSlice.actions;
 
 export const selectTasks = (state) => state.taskList;
 export const selectAreTasksEmpty = (state) =>
