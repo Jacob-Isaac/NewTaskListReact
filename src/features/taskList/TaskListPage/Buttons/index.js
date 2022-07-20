@@ -1,17 +1,22 @@
 import { Wrapper, Button } from "./styled";
+import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
+  selectHideDone,
   selectAreTasksEmpty,
   hideAllTasks,
   doneAllTasks,
   fetchExampleTasks,
-} from "../tasksSlice";
+  selectIsEveryTaskDone,
+  selectTasksByQuery
+} from "../../tasksSlice";
 
 const Buttons = () => {
-  const { taskList, hideTask, showOrHide } = useSelector(selectTasks);
-  const isTaskListEmpty = useSelector(selectAreTasksEmpty);
+  const {taskList, isTaskHide}= useSelector(selectTasks);
+  const emptyTaskList = useSelector(selectAreTasksEmpty);
   const dispatch = useDispatch();
+  const ifEveryTaskDone = useSelector(selectIsEveryTaskDone)
 
   return (
     <Wrapper>
@@ -26,14 +31,13 @@ const Buttons = () => {
         }
         onClick={() => dispatch(hideAllTasks())}
       >
-        {hideTask ? "Pokaż" : "Ukryj"} ukończone
+        {isTaskHide ? "Pokaż" : "Ukryj"} ukończone
       </Button>
       <Button
-        disabled={isTaskListEmpty && true}
+        disabled={emptyTaskList && true}
         onClick={() => dispatch(doneAllTasks())}
       >
-        {showOrHide ? "Odznacz" : "Ukończ"} wszystkie  
-        {/* ustawić żeby odznacz było tylko jesli przynajmniej jeden jest zaznaczony i ukończ tylko jeżeli przynajmniej jeden jest nieukończony */}
+        { ifEveryTaskDone ? "Odznacz" : "Ukończ"} wszystkie  
       </Button>
     </Wrapper>
   );

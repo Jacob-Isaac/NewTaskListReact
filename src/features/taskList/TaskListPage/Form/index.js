@@ -1,7 +1,7 @@
 import React from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
-import { addTask } from "../tasksSlice";
+import { addTask } from "../../tasksSlice";
 import { SubmitButton } from "./styled";
 
 const Form = () => {
@@ -16,11 +16,11 @@ const Form = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-
-    if (newTaskTrimmed === "") {
-      focus.current.focus();
-      return null;
-    }
+    
+if (newTaskTrimmed === "") {
+  focus.current.focus();
+  return null;
+}
 
     dispatch(
       addTask({
@@ -53,3 +53,4 @@ const Form = () => {
 };
 
 export default Form;
+
