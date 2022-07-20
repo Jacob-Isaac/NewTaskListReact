@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getTasksFromLocalStorage } from "./tasksLocalStorage";
 
+
 const taskListSlice = createSlice({
   name: "taskList",
   initialState: {
     taskList: getTasksFromLocalStorage(),
-    hideTask: false,
-    showOrHide: false,
+    isTaskHide: false,
   },
 
   reducers: {
@@ -14,7 +14,7 @@ const taskListSlice = createSlice({
       state.taskList.push(newTask);
     },
     hideAllTasks: (state) => {
-      state.hideTask = !state.hideTask;
+     state.isTaskHide = !state.isTaskHide;
     },
     tickTask: (state, { payload: id }) => {
       const index = state.taskList.findIndex((task) => task.id === id);
@@ -28,14 +28,13 @@ const taskListSlice = createSlice({
       ];
     },
     doneAllTasks: (state) => {
-      state.showOrHide = !state.showOrHide;
-      if (state.showOrHide === true) {
-        for (const task of state.taskList) {
-          task.done = true;
-        }
+      if (state.taskList.every(({done}) => done)) {
+          for (const task of state.taskList) {
+            task.done = false;
+          }
       } else {
         for (const task of state.taskList) {
-          task.done = false;
+          task.done = true;
         }
       }
     },
@@ -45,6 +44,7 @@ const taskListSlice = createSlice({
     },
   },
 });
+
 
 export const {
   addTask,
@@ -59,5 +59,19 @@ export const {
 export const selectTasks = (state) => state.taskList;
 export const selectAreTasksEmpty = (state) =>
   selectTasks(state).taskList.length === 0;
+  export const selectIsEveryTaskDone = (state) => selectTasks(state).taskList.every(({done}) => done);
+export const getTaskById = (state, taskId) =>
+selectTasks(state).taskList.find(({id}) => id === taskId);
+ export const selectHideDone = (state) => selectTasks(state).taskList.isTaskHide;
+export const selectTasksByQuery = (state, query) => {
+  const taskList = selectTasks(state);
+  if (!query || query.trim() === "") {
+    return taskList.taskList;
+  }
+  return taskList.taskList.filter(({content}) => content.toUpperCase().includes(query.trim().toUpperCase()));
+  
+}
+
 
 export default taskListSlice.reducer;
+// continue 20:00 14.05
