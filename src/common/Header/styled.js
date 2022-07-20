@@ -1,17 +1,13 @@
 import { StandardBox } from "../../styled";
 import styled from "styled-components";
 
-export const NavigationBox = styled.div`
-  ${StandardBox}
+export const Buttons = styled.div`
   text-align: center;
   padding: 20px;
   margin-top: 5px;
   margin-bottom: 40px;
-  background-color: rgb(255 255 255 / 80%);
   min-width: 250px;
   @media (max-width: 800px) {
-    box-shadow: 5px 5px 10px;
-    background-color: rgb(255 255 255 / 80%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,7 +20,6 @@ export const Button = styled.button`
   margin-left: 22px;
   margin-right: 22px;
   margin-top: 20px;
-  margin-bottom: 20px;
   padding: 15px;
   font-family: "Montserrat", cursive, sans-serif;
   font-size: 20px;
@@ -41,3 +36,12 @@ export const Button = styled.button`
     transform: scale(0.8);
   }
 `;
+
+export const NavigationBox = styled.header`
+${StandardBox}
+font-family: "Montserrat", cursive, sans-serif;
+  font-size: 30px;
+  color: black;
+  font-weight: bolder;
+`;
+
