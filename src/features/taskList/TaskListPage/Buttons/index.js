@@ -1,27 +1,24 @@
 import { Wrapper, Button } from "./styled";
-import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
-  selectHideDone,
   selectAreTasksEmpty,
   hideAllTasks,
   doneAllTasks,
   fetchExampleTasks,
   selectIsEveryTaskDone,
-  selectTasksByQuery
 } from "../../tasksSlice";
 
 const Buttons = () => {
-  const {taskList, isTaskHide}= useSelector(selectTasks);
+  const {taskList, isTaskHide, ifLoading}= useSelector(selectTasks);
   const emptyTaskList = useSelector(selectAreTasksEmpty);
   const dispatch = useDispatch();
-  const ifEveryTaskDone = useSelector(selectIsEveryTaskDone)
+  const ifEveryTaskDone = useSelector(selectIsEveryTaskDone);
 
   return (
     <Wrapper>
-      <Button onClick={() => dispatch(fetchExampleTasks())}>
-        POBIERZ TASKI MORDO
+      <Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
+       {ifLoading ? "Ładowanie..." : "POBIERZ TASKI MORDO" } 
       </Button>
       <Button
         disabled={
