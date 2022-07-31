@@ -1,4 +1,6 @@
 import { css } from "styled-components";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StandardBox = css`
   color: rgb(24, 24, 24);
@@ -11,4 +13,14 @@ export const StandardBox = css`
   min-width: 250px;
   width: 80%;
   border-radius: 17px;
+`;
+
+// export const Input = css`
+
+// `;    zrobic inputa stylizowanego ktorego mozna wszedzie uzyc / przerzucić do common
+
+export const StyledNavLink = styled(NavLink)`
+&.active {
+  color: red;
+}
 `;
