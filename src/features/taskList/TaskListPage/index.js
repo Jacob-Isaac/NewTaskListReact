@@ -4,6 +4,7 @@ import Tasks from "./Tasks";
 import Header from "../../../common/Header";
 import Footer from "../../../common/Footer";
 import Buttons from "./Buttons";
+import Search from "./Search";
 import MainContainer from "../../../common/MainContainer";
 
 
@@ -14,7 +15,8 @@ function TaskListPage() {
     <>
       <Header />
       <MainContainer>
-        <Buttons />
+        <Search/>
+      <Buttons />
         <Form />
         <Tasks />
         <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
