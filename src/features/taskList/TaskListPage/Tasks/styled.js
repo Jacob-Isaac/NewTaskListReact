@@ -15,6 +15,7 @@ export const Button = styled.button`
   block-size: 25px;
   margin-left: 5px;
   margin-right: 5px;
+  cursor: pointer;
 `;
 
 export const Content = styled.span`

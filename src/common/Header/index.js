@@ -1,20 +1,41 @@
-import { NavigationBox, Buttons, Button } from "./styled";
+import {Buttons, Button } from "./styled";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectTasks,
+  fetchExampleTasks,
+} from "../../features/taskList/tasksSlice";
 
-const Header = ({ title }) => (
-  <NavigationBox name="StandardBox">
+
+const Header = ({ title }) => {
+  const {ifLoading}= useSelector(selectTasks);
+  const dispatch = useDispatch();
+return (
+  <>
     {title}
     <Buttons>
+      <NavLink exact to="/zadania">
+        <Button>Zadania</Button>
+      </NavLink>
       <Button>
         <span>Zapisz</span>
+      </Button>
+      <Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
+       {ifLoading ? "Ładowanie . . . . . . ." : "Przykładowe zadania" } 
       </Button>
       <Button>
         <span>Załaduj</span>
       </Button>
       <Button>
-        <span>Usuń</span>
+        <span>Usuń wszystko</span>
       </Button>
+      <NavLink exact to="/author">
+      <Button>Autor</Button>
+      </NavLink>
     </Buttons>
-  </NavigationBox>
+  </>
 );
+};
 
 export default Header;

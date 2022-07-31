@@ -1,8 +1,8 @@
 import { Box } from "./styled";
 
-const MainContainer = ({ children }) => (
-  <Box as="main">
-    {/* StandardBox */}
+const MainContainer = ({ title, children }) => (
+  <Box as="main" id="StandardBox">
+    {title}
     {children}
   </Box>
 );

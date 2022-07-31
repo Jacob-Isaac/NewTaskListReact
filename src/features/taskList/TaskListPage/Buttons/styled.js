@@ -15,13 +15,12 @@ export const Button = styled.button`
   margin: 10px;
   background-color: transparent;
   border: none;
-  cursor: pointer;
-
   ${({ disabled }) =>
     disabled === false &&
     css`
       &:hover {
         color: rgb(158, 158, 158);
+        cursor: pointer;
       }
     `}
 `;

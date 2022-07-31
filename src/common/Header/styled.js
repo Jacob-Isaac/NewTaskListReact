@@ -1,5 +1,5 @@
-import { StandardBox } from "../../styled";
 import styled from "styled-components";
+import {css} from "styled-components";
 
 export const Buttons = styled.div`
   text-align: center;
@@ -15,6 +15,9 @@ export const Buttons = styled.div`
 `;
 
 export const Button = styled.button`
+    /* color: black; */
+    font-size: 15px;
+  text-decoration: none;
   background-color: transparent;
   border: none;
   margin-left: 22px;
@@ -22,9 +25,6 @@ export const Button = styled.button`
   margin-top: 20px;
   padding: 15px;
   font-family: "Montserrat", cursive, sans-serif;
-  font-size: 20px;
-  text-decoration: none;
-  color: black;
   font-weight: bolder;
   transition: all 0.01s ease-in-out;
   &:hover {
@@ -35,13 +35,16 @@ export const Button = styled.button`
     color: rgb(158, 158, 158);
     transform: scale(0.8);
   }
+  ${({ disabled }) =>
+    disabled === true &&
+    css`
+      &:hover {
+        color: rgb(158, 158, 158);
+      cursor: auto;
+      }
+      &:active {
+    color: rgb(158, 158, 158);
+    transform: none;
+  }
+    `}
 `;
-
-export const NavigationBox = styled.header`
-${StandardBox}
-font-family: "Montserrat", cursive, sans-serif;
-  font-size: 30px;
-  color: black;
-  font-weight: bolder;
-`;
-

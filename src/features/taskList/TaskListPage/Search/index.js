@@ -18,7 +18,6 @@ value: event.target.value.trim() !== "" ? event.target.value : undefined,
 
     return (
         <>
-       <h3>Wyszukiwarka</h3><br/>
        <Wrapper>
         <input 
         placeholder="Filtruj zadania" 
@@ -26,7 +25,6 @@ value: event.target.value.trim() !== "" ? event.target.value : undefined,
         onInput = {onInputChange}
         />
         </Wrapper><br/><br/><br/><br/>
-       
         </>
         
     );

@@ -5,21 +5,17 @@ import {
   selectAreTasksEmpty,
   hideAllTasks,
   doneAllTasks,
-  fetchExampleTasks,
   selectIsEveryTaskDone,
 } from "../../tasksSlice";
 
 const Buttons = () => {
-  const {taskList, isTaskHide, ifLoading}= useSelector(selectTasks);
+  const {taskList, isTaskHide}= useSelector(selectTasks);
   const emptyTaskList = useSelector(selectAreTasksEmpty);
   const dispatch = useDispatch();
   const ifEveryTaskDone = useSelector(selectIsEveryTaskDone);
 
   return (
     <Wrapper>
-      <Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
-       {ifLoading ? "Ładowanie..." : "POBIERZ TASKI MORDO" } 
-      </Button>
       <Button
         disabled={
           taskList.length >= 1 && taskList.some((task) => task.done === true)
