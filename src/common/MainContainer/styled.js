@@ -11,6 +11,8 @@ margin-top: 15px;
 
 export const Title = styled.p`
  margin-left: 15px; 
+ font-size: large;
+font-weight: bold;
 `;
 export const Space = styled.div`
 flex-grow: 1;
@@ -18,7 +20,7 @@ flex-grow: 1;
 export const H1 = styled.h1`
 min-width: 250px;
 display:flex;
-width: 80%;
+width: 70%;
 margin: auto;
 align-self: flex-start;
 `;

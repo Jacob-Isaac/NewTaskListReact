@@ -38,6 +38,7 @@ if (newTaskTrimmed === "") {
    
     <FormWrapper onSubmit={onFormSubmit}>
           <Input
+          placeholder="Co jest do zrobienia?" 
             id="input"
             ref={focus}
             value={newTask}

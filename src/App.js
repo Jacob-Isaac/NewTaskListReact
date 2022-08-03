@@ -14,7 +14,7 @@ const App = () => (
     <Switch>
       <Route path="/zadania/:id">
 
-        <MainContainer title={<h3>Szczegóły zadania</h3>}>
+        <MainContainer title={<>Szczegóły zadania</>}>
           <SingleTaskPage />
         </MainContainer>
 
@@ -24,7 +24,7 @@ const App = () => (
       </Route>
       <Route path="/author">
 
-        <MainContainer title={<h3>O autorze</h3>}>
+        <MainContainer title={<>O autorze</>}>
           <AuthorPage />
         </MainContainer>
 
