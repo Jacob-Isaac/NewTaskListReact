@@ -9,10 +9,8 @@ import MainContainer from "./common/MainContainer";
 const App = () => (
   <HashRouter>
 
-    <MainContainer>
       <Header />
-    </MainContainer>
-
+  
     <Switch>
       <Route path="/zadania/:id">
 

@@ -1,30 +1,29 @@
 import styled from "styled-components";
-import {css} from "styled-components";
+import { css } from "styled-components";
 
-export const Buttons = styled.div`
-  text-align: center;
-  padding: 20px;
-  margin-top: 5px;
-  margin-bottom: 40px;
-  min-width: 250px;
+export const Navigation = styled.div`
+  display: flex;
+  justify-content: center;
+  min-width: 200px;
+  width: 100%;
+  margin-bottom: 50px;
+  background-color: rgb(255 255 255 / 80%);
+  color: rgb(24, 24, 24);
+  box-shadow: 0.5px 0px 8px;
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 `;
 
 export const Button = styled.button`
-    /* color: black; */
-    font-size: 15px;
-  text-decoration: none;
+  font-size: 15px;
   background-color: transparent;
   border: none;
   margin-left: 22px;
   margin-right: 22px;
   margin-top: 20px;
-  padding: 15px;
-  font-family: "Montserrat", cursive, sans-serif;
+  margin-bottom: 20px;
   font-weight: bolder;
   transition: all 0.01s ease-in-out;
   &:hover {
@@ -40,11 +39,11 @@ export const Button = styled.button`
     css`
       &:hover {
         color: rgb(158, 158, 158);
-      cursor: auto;
+        cursor: auto;
       }
       &:active {
-    color: rgb(158, 158, 158);
-    transform: none;
-  }
+        color: rgb(158, 158, 158);
+        transform: none;
+      }
     `}
 `;

@@ -2,7 +2,7 @@ import React from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { addTask } from "../../tasksSlice";
-import { SubmitButton } from "./styled";
+import { SubmitButton, FormWrapper, Input } from "./styled";
 
 const Form = () => {
   const focus = React.useRef(null);
@@ -35,20 +35,17 @@ if (newTaskTrimmed === "") {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <p>
-        <label>
-          <input
+   
+    <FormWrapper onSubmit={onFormSubmit}>
+          <Input
             id="input"
             ref={focus}
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
             maxLength={178}
           />
-        </label>
-      </p>
       <SubmitButton>DODAJ !</SubmitButton>
-    </form>
+    </FormWrapper>
   );
 };
 

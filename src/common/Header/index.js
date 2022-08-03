@@ -1,4 +1,4 @@
-import {Buttons, Button } from "./styled";
+import {Navigation, Button } from "./styled";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,9 +12,8 @@ const Header = ({ title }) => {
   const {ifLoading}= useSelector(selectTasks);
   const dispatch = useDispatch();
 return (
-  <>
-    {title}
-    <Buttons>
+  <Navigation>
+      {title}
       <NavLink exact to="/zadania">
         <Button>Zadania</Button>
       </NavLink>
@@ -33,8 +32,8 @@ return (
       <NavLink exact to="/author">
       <Button>Autor</Button>
       </NavLink>
-    </Buttons>
-  </>
+  </Navigation>
+  
 );
 };
 

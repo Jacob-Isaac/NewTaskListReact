@@ -1,10 +1,18 @@
-import { Box } from "./styled";
+import { Title, Box, BorderLine, Wrappers} from "../TitleMainContainer/styled";
+// import Buttons from "../../features/taskList/TaskListPage/Buttons";
 
-const MainContainer = ({ title, children }) => (
+const MainContainer = ({ buttons, title, children }) => {
+  return (
   <Box as="main" id="StandardBox">
-    {title}
+  <BorderLine>
+    <Wrappers>
+    <Title>{title}</Title>
+    {buttons}
+    </Wrappers>
+    </BorderLine>
     {children}
   </Box>
-);
+  );
+};
 
 export default MainContainer;

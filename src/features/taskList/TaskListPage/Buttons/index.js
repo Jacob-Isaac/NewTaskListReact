@@ -32,7 +32,7 @@ const Buttons = () => {
       >
         { ifEveryTaskDone ? "Odznacz" : "Ukończ"} wszystkie  
       </Button>
-    </Wrapper>
+   </Wrapper>
   );
 };
 

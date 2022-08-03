@@ -4,16 +4,21 @@ import { css } from "styled-components";
 
 export const StandardBox = css`
   color: rgb(24, 24, 24);
-  box-shadow: 5px 5px 10px;
+  box-shadow: 0px 0px 8px;
   margin: auto;
-  margin-top: 60px;
-  padding-top: 20px;
+  width: 80%;
+  /* margin-top: 20px; */
+  margin-bottom: 15px;
+  /* padding-top: 20px; */
   padding-bottom: 20px;
   background-color: rgb(255 255 255 / 80%);
   min-width: 250px;
-  width: 80%;
-  border-radius: 17px;
+  /* border-radius: 17px; */
 `;
+
+
+
+
 
 // export const Input = css`
 
