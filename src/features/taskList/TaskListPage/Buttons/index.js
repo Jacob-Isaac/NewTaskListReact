@@ -1,4 +1,4 @@
-import { Wrapper, Button } from "./styled";
+import { Button } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
@@ -9,13 +9,13 @@ import {
 } from "../../tasksSlice";
 
 const Buttons = () => {
-  const {taskList, isTaskHide}= useSelector(selectTasks);
+  const { taskList, isTaskHide } = useSelector(selectTasks);
   const emptyTaskList = useSelector(selectAreTasksEmpty);
   const dispatch = useDispatch();
   const ifEveryTaskDone = useSelector(selectIsEveryTaskDone);
 
   return (
-    <Wrapper>
+    <>
       <Button
         disabled={
           taskList.length >= 1 && taskList.some((task) => task.done === true)
@@ -30,9 +30,9 @@ const Buttons = () => {
         disabled={emptyTaskList && true}
         onClick={() => dispatch(doneAllTasks())}
       >
-        { ifEveryTaskDone ? "Odznacz" : "Ukończ"} wszystkie  
+        {ifEveryTaskDone ? "Odznacz" : "Ukończ"} wszystkie
       </Button>
-   </Wrapper>
+    </>
   );
 };
 

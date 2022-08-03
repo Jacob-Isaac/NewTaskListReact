@@ -8,7 +8,7 @@ export const StandardBox = css`
   margin: auto;
   width: 80%;
   /* margin-top: 20px; */
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   /* padding-top: 20px; */
   padding-bottom: 20px;
   background-color: rgb(255 255 255 / 80%);

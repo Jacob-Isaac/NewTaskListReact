@@ -1,17 +1,18 @@
-import { Title, Box, BorderLine, Wrappers} from "../TitleMainContainer/styled";
-// import Buttons from "../../features/taskList/TaskListPage/Buttons";
+import {H1, Box, Wrapper, Title, Space} from "./styled";
 
-const MainContainer = ({ buttons, title, children }) => {
+const MainContainer = ({ appTitle, buttons, title, children }) => {
   return (
-  <Box as="main" id="StandardBox">
-  <BorderLine>
-    <Wrappers>
-    <Title>{title}</Title>
-    {buttons}
-    </Wrappers>
-    </BorderLine>
-    {children}
-  </Box>
+    <>
+      <H1>{appTitle}</H1>
+      <Box as="main" id="StandardBox">
+        <Wrapper>
+          <Title>{title}</Title>
+          <Space />
+          {buttons}
+        </Wrapper>
+        {children}
+      </Box>
+    </>
   );
 };
 
