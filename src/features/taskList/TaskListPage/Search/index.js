@@ -1,5 +1,5 @@
 import React from "react";
-import {Wrapper} from "./styled";
+import {Wrapper, Input} from "./styled";
 import useQueryParameter from "./useQueryParameter";
 import searchQueryParamName from "../../../../common/searchQueryParamName"
 import useReplaceQueryParameter from "./useReplaceQueryParameter";
@@ -19,12 +19,12 @@ value: event.target.value.trim() !== "" ? event.target.value : undefined,
     return (
         <>
        <Wrapper>
-        <input 
+        <Input 
         placeholder="Filtruj zadania" 
         value = {query || ""}
         onInput = {onInputChange}
         />
-        </Wrapper><br/><br/><br/><br/>
+        </Wrapper>
         </>
         
     );

@@ -7,22 +7,37 @@ justify-content: flex-start;
 border-bottom: 1px solid rgb(100, 100, 100);
 margin-bottom: 15px;
 margin-top: 15px;
+@media (max-width: 800px) {
+    /* justify-content: flex-end; */
+    /* align-items: center; */
+  flex-direction: column;
+}
 `;
 
 export const Title = styled.p`
  margin-left: 15px; 
  font-size: large;
 font-weight: bold;
+@media (max-width: 800px) {
+  font-size: 14px;
+  margin-left: 0px; 
+}
 `;
 export const Space = styled.div`
-flex-grow: 1;
+
+@media (min-width: 800px) {
+    flex-grow: 1;
+}
 `;
 export const H1 = styled.h1`
+color: rgb(255 255 255 / 80%);
 min-width: 250px;
-display:flex;
-width: 70%;
+width: 50%;
 margin: auto;
-align-self: flex-start;
+@media (min-width: 800px) {
+    display:flex;
+    align-self: flex-start;
+}
 `;
 
 export const Box = styled.div`

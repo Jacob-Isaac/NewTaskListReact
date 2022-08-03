@@ -1,8 +1,10 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Task = styled.span`
   display: flex;
-  margin-bottom: 8px;
+  padding: 9px;
+  margin-bottom: 9px;
   border-bottom: 1px solid rgb(158, 157, 157);
   ${({ hide }) =>
     hide &&
@@ -10,15 +12,33 @@ export const Task = styled.span`
       display: none;
     `}
 `;
-
 export const Button = styled.button`
-  block-size: 25px;
-  margin-left: 5px;
-  margin-right: 5px;
+  border: transparent;
   cursor: pointer;
+  color: rgb(233, 233, 233);
+  min-width: 33px;
+  height: 30px;
+  transition: background 0.25s;
+  ${({ Green }) =>
+    Green &&
+    css`
+      background-color: teal;
+      &:hover {
+        background-color: hsl(180, 100%, 28%);
+      }
+    `};
+  ${({ Red }) =>
+    Red &&
+    css`
+      background-color: #df1616;
+      &:hover {
+        background-color: #df4747;
+      }
+    `};
 `;
 
 export const Content = styled.span`
+ text-align: justify;
   flex-grow: 1;
   margin: 5px;
   ${({ done }) =>
@@ -36,4 +56,12 @@ export const TaskList = styled.ul`
   list-style-type: none;
   margin-right: 35px;
   word-break: break-word;
+`;
+
+export const StyledLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+  &:hover {
+    color: rgb(158, 158, 158);
+  }
 `;

@@ -11,5 +11,14 @@ export const Button = styled.button`
         color: rgb(158, 158, 158);
         cursor: pointer;
       }
+      &:active {
+        color: black;
+        cursor: pointer;
+      }
     `}
+    @media (max-width: 800px) {
+  font-size: 14px;
+  margin: 15px;
+}
+
 `;

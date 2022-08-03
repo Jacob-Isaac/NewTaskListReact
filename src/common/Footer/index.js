@@ -3,7 +3,7 @@ import { Text } from "./styled";
 const Footer = (props) => (
   <footer>
     <Text>{props.text}</Text>
-  </footer>
+    </footer>
 );
 
 export default Footer;

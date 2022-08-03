@@ -6,7 +6,7 @@ export const StandardBox = css`
   color: rgb(24, 24, 24);
   box-shadow: 0px 0px 8px;
   margin: auto;
-  width: 70%;
+  width: 50%;
   /* margin-top: 20px; */
   /* margin-bottom: 15px; */
   /* padding-top: 20px; */
