@@ -14,6 +14,9 @@ export const StandardBox = css`
   background-color: rgb(255 255 255 / 80%);
   min-width: 250px;
   /* border-radius: 17px; */
+  @media (max-width: 800px) {
+    width: 90%;
+}
 `;
 
 
