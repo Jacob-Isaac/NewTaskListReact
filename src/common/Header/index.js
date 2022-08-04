@@ -7,6 +7,7 @@ import {
   fetchExampleTasks,
   fetchMyTasksGet,
   fetchMyTasksSave,
+  removeAllTasks,
 } from "../../features/taskList/tasksSlice";
 
 
@@ -21,18 +22,16 @@ return (
       </NavLink>
       
       <Button onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading2}>
-       {ifLoading2 ? "Ładowanie . . . . . . ." : "Zapisz" } 
+       {ifLoading2 ? "Ładowanie..." : "Zapisz" } 
       </Button>
      
       <Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
-       {ifLoading ? "Ładowanie . . . . . . ." : "Przykładowe zadania" } 
+       {ifLoading ? "Ładowanie..." : "Przykładowe zadania" } 
       </Button>
       <Button onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading3}>
-       {ifLoading3 ? "Ładowanie . . . . . . ." : "Załaduj" } 
+       {ifLoading3 ? "Ładowanie..." : "Załaduj" } 
       </Button>
-      <Button>
-        <span>Usuń wszystko</span>
-      </Button>
+      <Button onClick={() => dispatch(removeAllTasks())}><span>Usuń wszystko</span></Button>
       <NavLink exact to="/author">
       <Button>Autor</Button>
       </NavLink>

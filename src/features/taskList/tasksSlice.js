@@ -31,6 +31,10 @@ const taskListSlice = createSlice({
         ...state.taskList.slice(index + 1),
       ];
     },
+    removeAllTasks: (state) => {
+      state.taskList = [];
+      window.localStorage.clear();
+    },
     doneAllTasks: (state) => {
       if (state.taskList.every(({done}) => done)) {
           for (const task of state.taskList) {
@@ -69,6 +73,7 @@ export const {
   hideAllTasks,
   tickTask,
   removeTask,
+  removeAllTasks,
   doneAllTasks,
   fetchExampleTasks,
   fetchMyTasksSave,

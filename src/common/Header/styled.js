@@ -10,13 +10,16 @@ export const Navigation = styled.div`
   background-color: rgb(255 255 255 / 80%);
   color: rgb(24, 24, 24);
   box-shadow: 0.5px 0px 8px;
-  @media (max-width: 800px) {
+  @media (max-width: 850px) {
     display: flex;
     flex-direction: column;
   }
 `;
 
 export const Button = styled.button`
+ @media (min-width: 1280px) {
+  width: 14%;
+  }
   font-size: 15px;
   background-color: transparent;
   border: none;
