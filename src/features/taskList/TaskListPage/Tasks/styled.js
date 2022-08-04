@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Task = styled.span`
   display: flex;
-  padding: 9px;
+  padding-bottom: 9px;
   margin-bottom: 9px;
   border-bottom: 1px solid rgb(158, 157, 157);
   ${({ hide }) =>

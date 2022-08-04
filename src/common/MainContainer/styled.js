@@ -8,8 +8,6 @@ border-bottom: 1px solid rgb(100, 100, 100);
 margin-bottom: 15px;
 margin-top: 15px;
 @media (max-width: 800px) {
-    /* justify-content: flex-end; */
-    /* align-items: center; */
   flex-direction: column;
 }
 `;
