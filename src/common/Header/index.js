@@ -5,21 +5,24 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
   fetchExampleTasks,
+  fetchMyTasks,
 } from "../../features/taskList/tasksSlice";
 
 
 const Header = ({ title }) => {
-  const {ifLoading}= useSelector(selectTasks);
+  const {ifLoading, ifLoading2 }= useSelector(selectTasks);
   const dispatch = useDispatch();
 return (
   <Navigation>
       {title}
       <NavLink exact to="/zadania">
-        <Button>Zadania</Button>
+        <Button><span>Zadania</span></Button>
       </NavLink>
-      <Button>
-        <span>Zapisz</span>
+      
+      <Button onClick={() => dispatch(fetchMyTasks())} disabled={ifLoading2}>
+       {ifLoading2 ? "Ładowanie . . . . . . ." : "Zapisz" } 
       </Button>
+     
       <Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
        {ifLoading ? "Ładowanie . . . . . . ." : "Przykładowe zadania" } 
       </Button>
@@ -33,7 +36,7 @@ return (
       <Button>Autor</Button>
       </NavLink>
   </Navigation>
-  
+  // zrobic menu rozwijalne dla mobilek !!
 );
 };
 

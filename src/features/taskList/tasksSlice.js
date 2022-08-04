@@ -5,8 +5,11 @@ const taskListSlice = createSlice({
   name: "taskList",
   initialState: {
     taskList: getTasksFromLocalStorage(),
+    // next step :  getTasks tylko wtedy jak klikniemy , stworzyć osobny fetch getMyTasks
+    //taskList: [],
     isTaskHide: false,
     ifLoading: false,
+    ifLoading2: false,
   },
 
   reducers: {
@@ -41,10 +44,16 @@ const taskListSlice = createSlice({
     fetchExampleTasks: (state) => {
       state.ifLoading = true;
     },
+    fetchMyTasks: (state) => {
+      state.ifLoading2 = true;
+    },
 
     setTaskList: (state, { payload: exampleTasks }) => {
       state.taskList = exampleTasks;
       state.ifLoading = false;
+    },
+    setLoading: (state) => {
+      state.ifLoading2 = false;
     },
   },
 });
@@ -57,7 +66,9 @@ export const {
   removeTask,
   doneAllTasks,
   fetchExampleTasks,
+  fetchMyTasks,
   setTaskList,
+  setLoading,
   setButtonText,
 } = taskListSlice.actions;
 
