@@ -7,6 +7,7 @@ import Search from "./Search";
 import MainContainer from "../../../common/MainContainer";
 
 function TaskListPage() {
+
   return (
     <>
       <MainContainer appTitle={<>Lista zadań</>} title={<>Dodaj nowe zadanie</>}>

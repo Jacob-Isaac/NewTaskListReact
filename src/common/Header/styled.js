@@ -50,3 +50,24 @@ export const Button = styled.button`
       }
     `}
 `;
+export const Img = styled.img`
+  width: 70px;
+  height: 70px;
+  ${({ click }) =>
+   click === true &&
+    css`
+  transition-duration: 0.5s;
+  transition-property: transform;
+  transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    `}
+    ${({ klik }) =>
+   klik === true &&
+    css`
+  transition-duration: 0.5s;
+  transition-property: transform;
+  transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    `}
+
+`;
