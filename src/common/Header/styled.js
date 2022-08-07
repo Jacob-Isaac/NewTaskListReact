@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { css } from "styled-components";
 
@@ -17,6 +18,7 @@ export const Navigation = styled.div`
 `;
 
 export const Button = styled.button`
+  -webkit-tap-highlight-color: transparent;
  @media (min-width: 1280px) {
   width: 14%;
   }
@@ -29,6 +31,9 @@ export const Button = styled.button`
   margin-bottom: 20px;
   font-weight: bolder;
   transition: all 0.01s ease-in-out;
+  &:visited {
+    color: black;
+  }
   &:hover {
     color: rgb(158, 158, 158);
     cursor: pointer;
@@ -36,6 +41,7 @@ export const Button = styled.button`
   &:active {
     color: rgb(158, 158, 158);
     transform: scale(0.8);
+    background-color:none;
   }
   ${({ disabled }) =>
     disabled === true &&
@@ -49,10 +55,61 @@ export const Button = styled.button`
         transform: none;
       }
     `}
+    
 `;
+export const Span = styled.span`
+ color:black;
+    `;
+    
+export const StyledNavLink = styled(NavLink)`
+ @media (min-width: 1280px) {
+  width: 14%;
+  }
+  font-size: 15px;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: black;
+  margin-left: 22px;
+  margin-right: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  transition: all 0.01s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  &:visited {
+    color: black;
+    background-color:none;
+  }
+  &:hover {
+    color: rgb(158, 158, 158);
+    cursor: pointer;
+  }
+  &:active {
+    color: rgb(158, 158, 158);
+    transform: scale(0.8);
+    background-color:none;
+    color: black;
+  }
+  ${({ disabled }) =>
+    disabled === true &&
+    css`
+      &:hover {
+        color: rgb(158, 158, 158);
+        cursor: auto;
+      }
+      &:active {
+        color: rgb(158, 158, 158);
+        transform: none;
+      }
+    `}
+    background-color:none;
+`;
+
 export const Img = styled.img`
   width: 70px;
   height: 70px;
+  -webkit-tap-highlight-color: transparent;
   ${({ click }) =>
    click === true &&
     css`
@@ -60,6 +117,7 @@ export const Img = styled.img`
   transition-property: transform;
   transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
+    -webkit-tap-highlight-color: transparent;
     `}
     ${({ klik }) =>
    klik === true &&
@@ -68,6 +126,7 @@ export const Img = styled.img`
   transition-property: transform;
   transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
+    -webkit-tap-highlight-color: transparent;
     `}
 
 `;

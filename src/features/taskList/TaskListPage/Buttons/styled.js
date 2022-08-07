@@ -4,21 +4,25 @@ export const Button = styled.button`
   margin-right: 11px;
   background-color: transparent;
   border: none;
+  color: black;
+  -webkit-tap-highlight-color: transparent;
+  &:hover {
+    color: rgb(158, 158, 158);
+    cursor: pointer;
+  }
+  @media (max-width: 800px) {
+    font-size: 14px;
+    margin: 15px;
+  }
+`;
+export const Span = styled.span`
+  color: black;
   ${({ disabled }) =>
-    disabled === false &&
+    disabled === true &&
     css`
+      color: rgb(158, 158, 158);
       &:hover {
-        color: rgb(158, 158, 158);
-        cursor: pointer;
-      }
-      &:active {
-        color: black;
-        cursor: pointer;
+        cursor: context-menu;
       }
     `}
-    @media (max-width: 800px) {
-  font-size: 14px;
-  margin: 15px;
-}
-
 `;

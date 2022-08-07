@@ -1,6 +1,6 @@
-import {Navigation, Button, Img } from "./styled";
+import {Span, StyledNavLink, Navigation, Button, Img } from "./styled";
 import React, {useState} from "react";
-import { NavLink } from "react-router-dom";
+//  import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
@@ -27,28 +27,62 @@ const Header = ({ title }) => {
 return (
   <Navigation>
       {title}
-      <NavLink exact to="/zadania">
-        <Button><span>Zadania</span></Button>
-      </NavLink>
+
+      <StyledNavLink exact to="/zadania">
+       <Span> Zadania</Span>
+      </StyledNavLink>
       
       <Button onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading2}>
-       {ifLoading2 ? "Zapisywanie..." : "Zapisz" } 
+       {ifLoading2 ? "Zapisywanie..." : <Span>Zapisz</Span> } 
       </Button>
      
       <Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
-       {ifLoading ? "Ładowanie..." : "Przykładowe zadania" } 
+       {ifLoading ? "Ładowanie..." : <Span>Przykładowe zadania</Span> } 
       </Button>
-      <Button onClick={handleClick}>
-        <Img click={isActive} klik={!isActive} src={menu} alt="Ładujemy..."></Img>
-        </Button>
-      {/* <Button onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading3}>
-       {ifLoading3 ? "Ładowanie..." : "Załaduj" } 
-      </Button> */}
-      <Button onClick={() => dispatch(removeAllTasks())}><span>Usuń wszystko</span></Button>
-      <NavLink exact to="/author">
-      <Button>Autor</Button>
-      </NavLink>
+     
+     <Button onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading3}>
+       {ifLoading3 ? "Ładowanie..." : <Span>Załaduj</Span> } 
+      </Button>
+
+      <Button onClick={() => dispatch(removeAllTasks())}><Span>Usuń wszystko</Span></Button>
+
+      <StyledNavLink exact to="/author">
+      <Span>Autor</Span>
+      </StyledNavLink>
+
+      <Img  onClick={handleClick} click={isActive} klik={!isActive} src={menu} alt="Ładujemy..."></Img>
+
   </Navigation>
+
+/* <Navigation>
+{title}
+
+   <Img  onClick={handleClick} click={isActive} klik={!isActive} src={menu} alt="Ładujemy..."></Img>
+
+
+<StyledNavLink exact to="/zadania">
+ <Span> Zadania</Span>
+</StyledNavLink>
+
+<Button onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading2}>
+ {ifLoading2 ? "Zapisywanie..." : <Span>Zapisz</Span> } 
+</Button>
+
+<Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
+ {ifLoading ? "Ładowanie..." : <Span>Przykładowe zadania</Span> } 
+</Button>
+  <Img  onClick={handleClick} click={isActive} klik={!isActive} src={menu} alt="Ładujemy..."></Img>
+<Button onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading3}>
+ {ifLoading3 ? "Ładowanie..." : <Span>Załaduj</Span> } 
+</Button>
+
+<Button onClick={() => dispatch(removeAllTasks())}><Span>Usuń wszystko</Span></Button>
+
+<StyledNavLink exact to="/author">
+<Span>Autor</Span>
+</StyledNavLink>
+
+</Navigation> */
   // zrobic menu rozwijalne dla mobilek !!
   
 );

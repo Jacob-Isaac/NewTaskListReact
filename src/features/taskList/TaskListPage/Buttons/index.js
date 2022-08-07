@@ -1,4 +1,4 @@
-import { Button } from "./styled";
+import { Button, Span } from "./styled";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
@@ -24,13 +24,23 @@ const Buttons = () => {
         }
         onClick={() => dispatch(hideAllTasks())}
       >
-        {isTaskHide ? "Pokaż" : "Ukryj"} ukończone
+        <Span
+          disabled={
+            taskList.length >= 1 && taskList.some((task) => task.done === true)
+              ? false
+              : true
+          }
+        >
+          {isTaskHide ? "Pokaż" : "Ukryj"} ukończone
+        </Span>
       </Button>
       <Button
         disabled={emptyTaskList && true}
         onClick={() => dispatch(doneAllTasks())}
       >
-        {ifEveryTaskDone ? "Odznacz" : "Ukończ"} wszystkie
+        <Span disabled={emptyTaskList && true}>
+          {ifEveryTaskDone ? "Odznacz" : "Ukończ"} wszystkie
+        </Span>
       </Button>
     </>
   );
