@@ -5,11 +5,13 @@ import Footer from "../../../common/Footer";
 import Buttons from "./Buttons";
 import Search from "./Search";
 import MainContainer from "../../../common/MainContainer";
+import HeaderMobile from "../../../common/HeaderMobile/index.js";
 
 function TaskListPage() {
 
   return (
     <>
+   
       <MainContainer appTitle={<>Lista zadań</>} title={<>Dodaj nowe zadanie</>}>
         <Form />
       </MainContainer>

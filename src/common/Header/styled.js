@@ -7,6 +7,7 @@ export const Navigation = styled.div`
   justify-content: center;
   min-width: 200px;
   width: 100%;
+  height: 80px;
   margin-bottom: 50px;
   background-color: rgb(255 255 255 / 80%);
   color: rgb(24, 24, 24);
@@ -130,3 +131,18 @@ export const Img = styled.img`
     `}
 
 `;
+
+// export const Navigation = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   min-width: 200px;
+//   width: 100%;
+//   margin-bottom: 50px;
+//   background-color: rgb(255 255 255 / 80%);
+//   color: rgb(24, 24, 24);
+//   box-shadow: 0.5px 0px 8px;
+//   @media (max-width: 850px) {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// `;
