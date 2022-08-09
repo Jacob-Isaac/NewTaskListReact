@@ -21,9 +21,10 @@ return (
     <div class="wrapper">
       <ul>
 <li><a><NavLink exact to="/zadania">Zadania</NavLink></a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Services</a></li>
-<li><a href="#">Gallery</a></li>
+<li><a href="#">Zapisz</a></li>
+<li><a href="#">Przykłady</a></li>
+<li><a href="#">Załaduj</a></li>
+<li><a href="#">Usuń Wszystko</a></li>
 <li><a href="#"><NavLink exact to="/author">Autor</NavLink></a></li>
 </ul>
 </div>
