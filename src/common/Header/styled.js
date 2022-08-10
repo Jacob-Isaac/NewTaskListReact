@@ -7,7 +7,7 @@ export const Navigation = styled.div`
   justify-content: center;
   min-width: 200px;
   width: 100%;
-  height: 80px;
+  /* height: 80px; */
   margin-bottom: 50px;
   background-color: rgb(255 255 255 / 80%);
   color: rgb(24, 24, 24);
@@ -63,7 +63,7 @@ export const Span = styled.span`
     `;
     
 export const StyledNavLink = styled(NavLink)`
- @media (min-width: 1280px) {
+ @media (min-width: 1380px) {
   width: 14%;
   }
   font-size: 15px;
@@ -73,7 +73,7 @@ export const StyledNavLink = styled(NavLink)`
   color: black;
   margin-left: 22px;
   margin-right: 22px;
-  margin-top: 20px;
+  margin-top: 22px;
   margin-bottom: 20px;
   font-weight: bolder;
   transition: all 0.01s ease-in-out;

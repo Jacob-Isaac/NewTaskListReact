@@ -2,6 +2,7 @@ import { Wrapper, Article } from "./styled";
 import Footer from "../../common/Footer";
 
 
+
 const AuthorPage = () =>  (
   <>
       <Wrapper>

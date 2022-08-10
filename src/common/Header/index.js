@@ -1,6 +1,5 @@
-import {Span, StyledNavLink, Navigation, Button, Img } from "./styled";
-import React, {useState} from "react";
-//  import { NavLink } from "react-router-dom";
+import {Span, StyledNavLink, Navigation, Button} from "./styled";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
@@ -9,17 +8,16 @@ import {
   fetchMyTasksSave,
   removeAllTasks,
 } from "../../features/taskList/tasksSlice";
-import menu from "./menu.png";
 
 
 const Header = ({ title }) => {
   const {ifLoading, ifLoading2, ifLoading3 }= useSelector(selectTasks);
   const dispatch = useDispatch();
-  const [isActive, setIsActive] = useState(false);
-  const handleClick = () => {
-    setIsActive (current => !current);
-    console.log(isActive);
-  }
+  // const [isActive, setIsActive] = useState(false);
+  // const handleClick = () => {
+  //   setIsActive (current => !current);
+  //   console.log(isActive);
+  // }
   
 
   
@@ -49,8 +47,6 @@ return (
       <StyledNavLink exact to="/author">
       <Span>Autor</Span>
       </StyledNavLink>
-
-      <Img  onClick={handleClick} click={isActive} klik={!isActive} src={menu} alt="Ładujemy..."></Img>
 
   </Navigation>
 

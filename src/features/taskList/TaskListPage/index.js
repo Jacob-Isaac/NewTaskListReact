@@ -6,13 +6,29 @@ import Buttons from "./Buttons";
 import Search from "./Search";
 import MainContainer from "../../../common/MainContainer";
 import HeaderMobile from "../../../common/HeaderMobile/index.js";
+import Header from "../../../common/Header/index.js";
+import useWindowDimensions from "../../../common/customHooks/useWindowDimensions.js";
 
 function TaskListPage() {
+  const dimensions = useWindowDimensions();
+  let header;
+  let appTitle;
+  if (dimensions.width < 1000) {
+    header = <HeaderMobile />;
+    appTitle = "";
+  } else {
+    header = <Header />;
+    appTitle = "Lista zadań";
+  }
 
   return (
     <>
-   
-      <MainContainer appTitle={<>Lista zadań</>} title={<>Dodaj nowe zadanie</>}>
+      {header}
+
+      <MainContainer
+        appTitle={appTitle}
+        title={<>Dodaj nowe zadanie</>}
+      >
         <Form />
       </MainContainer>
 
