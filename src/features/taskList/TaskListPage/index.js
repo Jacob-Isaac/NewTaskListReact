@@ -29,7 +29,7 @@ function TaskListPage() {
   if (dimensions.width < 1000) {
     header = <HeaderMobile />;
     appTitle = "";
-    ifLoading ? appTitle = <LoadingScreen/> : appTitle= "";
+    ifLoading ? appTitle = <LoadingScreen/> : appTitle="";
   } else {
     header = <Header />;
     appTitle = "Lista zadań";

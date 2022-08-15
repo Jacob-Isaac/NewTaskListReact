@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink} from "react-router-dom";
 import { Button, Span } from "../Header/styled";
 import { useSelector, useDispatch } from "react-redux";
@@ -14,15 +14,17 @@ import { Wrapper, WrapperUl, Input, Content, ContentTitle,MenuButton, Close, Lab
 const HeaderMobile = () => {
   const {ifLoading}= useSelector(selectTasks);
   const dispatch = useDispatch();
+  const [checked, setChecked] = useState(false);
+  const toggle = () => setChecked(!checked);
 
 return (
     <>
-    <Input type="checkbox" id="active"/>
-    <MenuButton htmlFor="active"><LabelSpan></LabelSpan></MenuButton>
-    <Close htmlFor="active"></Close>
+    <Input type="checkbox" id="active" onChange={toggle}/>
+    <MenuButton for="active"><LabelSpan checked={checked}></LabelSpan></MenuButton>
+    <Close for="active"></Close>
     <Wrapper>
       <WrapperUl>
-      <label htmlFor="active">
+      <label for="active">
      <li><NavLink exact to="/zadania"><Button Mobile>Zadania</Button></NavLink></li>
      <li><Button Mobile onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading}>
       {ifLoading ? "Zapisz" : <Span >Zapisz</Span> } 

@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 
 export const Wrapper = styled.div`
- z-index: 2;
+z-index:2;
 -webkit-tap-highlight-color: transparent;
     position: fixed;
     top: -100%;
@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 export const WrapperUl = styled.ul`
     position: absolute;
     top: 60%;
-    left: 50%;
+    left: 46.5%;
     height: 90%;
     transform: translate(-54%, -50%);
     list-style: none;
@@ -25,7 +25,7 @@ export const WrapperUl = styled.ul`
 export const MenuButton = styled.label`
     -webkit-tap-highlight-color: transparent;
     position: absolute;
-    z-index: 2;
+    z-index:3;
     right: 20px;
     /*left: 20px; */
     top: 12px;
@@ -57,6 +57,7 @@ export const MenuButton = styled.label`
 	border-bottom: 2px solid #000;
 	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+
 `;
 
 export const LabelSpan = styled.span`
@@ -66,7 +67,13 @@ content: "";
 	left: 30%;
 	width: 40%;
 	border-bottom: 2px solid #000;
-	transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+	transition: transform .5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  ${({checked}) =>
+    checked === true &&
+    css`
+    transform: scaleX(0);
+    `}
+  
 `;
 
 export const Input = styled.input`
@@ -74,10 +81,7 @@ export const Input = styled.input`
 &:checked ~ ${Wrapper} {
     top: 0;
   } 
-  /* closing animation */
-  &:checked + ${LabelSpan} {
-	transform: scaleX(0);
-} 
+
 &:checked + ${MenuButton}{
     &:before {
         transform: rotate(45deg);
@@ -91,7 +95,7 @@ export const Input = styled.input`
 `;
 
 export const Cog = styled.img`
- z-index: 1;
+
     margin-bottom: 50px;
     margin-top: 50px;
       width: 70px;
@@ -127,7 +131,7 @@ export const ContentTitle = styled.div`
 `;
 
 export const Close = styled.label`
-	z-index: 2;
+	z-index:1;
 	width: 100%;
 	height: 100%;
 	pointer-events: none;

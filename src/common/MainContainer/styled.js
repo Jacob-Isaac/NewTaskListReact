@@ -30,9 +30,8 @@ export const Space = styled.div`
 export const H1 = styled.h1`
 color: rgb(255 255 255 / 80%);
 min-width: 250px;
-width: 100%;
+width: 90%;
 margin: auto;
-margin-left: 10px;
 @media (min-width: 1000px) {
     display:flex;
     align-self: flex-start;

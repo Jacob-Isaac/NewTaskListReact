@@ -60,7 +60,7 @@ export const Button = styled.button`
     ${({ Mobile }) =>
     Mobile &&
     css`
-font-size: 20px;
+font-size: 23px;
 font-weight: normal;
       `};
     
