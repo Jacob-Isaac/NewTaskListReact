@@ -11,7 +11,7 @@ import {
 
 
 const Header = ({ title }) => {
-  const {ifLoading, ifLoading2, ifLoading3 }= useSelector(selectTasks);
+  const {ifLoading, ifLoading2, ifLoading3 } = useSelector(selectTasks);
   const dispatch = useDispatch();
   // const [isActive, setIsActive] = useState(false);
   // const handleClick = () => {
@@ -30,19 +30,19 @@ return (
        <Span> Zadania</Span>
       </StyledNavLink>
       
-      <Button onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading2}>
-       {ifLoading2 ? "Zapisywanie..." : <Span>Zapisz</Span> } 
+      <Button onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading}>
+      {ifLoading ? "Zapisz" : <Span>Zapisz</Span> } 
       </Button>
      
       <Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
-       {ifLoading ? "Ładowanie..." : <Span>Przykładowe zadania</Span> } 
+       {ifLoading ? "Przykładowe zadania" : <Span>Przykładowe zadania</Span> } 
       </Button>
      
-     <Button onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading3}>
-       {ifLoading3 ? "Ładowanie..." : <Span>Załaduj</Span> } 
+     <Button onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading}>
+     {ifLoading ? "Załaduj" : <Span>Załaduj</Span> } 
       </Button>
 
-      <Button onClick={() => dispatch(removeAllTasks())}><Span>Usuń wszystko</Span></Button>
+      <Button onClick={() => dispatch(removeAllTasks())} disabled={ifLoading}>{ifLoading ? "Usuń wszystko" : <Span Red>Usuń wszystko</Span> } </Button>
 
       <StyledNavLink exact to="/author">
       <Span>Autor</Span>

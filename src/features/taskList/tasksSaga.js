@@ -7,7 +7,7 @@ import {
   takeEvery,
 } from "redux-saga/effects";
 import { getExampleTasks } from "./getExampleTasks";
-import { fetchExampleTasks,fetchMyTasksSave, fetchMyTasksGet, setTaskList, selectTasks, setLoading } from "./tasksSlice";
+import { fetchExampleTasks,fetchMyTasksSave, fetchMyTasksGet, setTaskList, selectTasks, setLoading, removeAllTasks } from "./tasksSlice";
 import { saveTasksInLocalStorage, getTasksFromLocalStorage } from "./tasksLocalStorage";
 
 function* fetchExampleTasksWorker() {
@@ -38,12 +38,21 @@ function* getTasksFromLocalStorageWorker() {
     yield call(alert("coś poszło nie tak! Spróbuj później :)"));
   }
 }
+function* removeAllTasksWorker() {
+  try {
+    yield delay(1000);
+    yield put(setLoading());
+  } catch (error) {
+    yield call(alert("coś poszło nie tak! Spróbuj później :)"));
+  }
+}
 
 
 export function* tasksSaga() {
   yield takeLatest(fetchExampleTasks.type, fetchExampleTasksWorker);
   yield takeLatest(fetchMyTasksSave.type, saveTasksInLocalStorageWorker);
   yield takeLatest(fetchMyTasksGet.type, getTasksFromLocalStorageWorker);
+  yield takeLatest(removeAllTasks.type, removeAllTasksWorker);
   // yield takeLatest("*", saveTasksInLocalStorageWorker);
   // zamiast gwiazdki fetchMyTasks.type, i potem to co już jest  - stworzyć ten 
   //fetch w tasks Slice !

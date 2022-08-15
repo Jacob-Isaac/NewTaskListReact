@@ -10,6 +10,7 @@ const App = () => (
   <HashRouter>
     <Switch>
       <Route path="/zadania/:id">
+      <AuthorNavigation/>
         <MainContainer title={<>Szczegóły zadania</>}>
           <SingleTaskPage />
         </MainContainer>

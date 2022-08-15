@@ -8,8 +8,21 @@ import MainContainer from "../../../common/MainContainer";
 import HeaderMobile from "../../../common/HeaderMobile/index.js";
 import Header from "../../../common/Header/index.js";
 import useWindowDimensions from "../../../common/customHooks/useWindowDimensions.js";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectTasks,
+  fetchExampleTasks,
+  fetchMyTasksGet,
+  fetchMyTasksSave,
+  removeAllTasks,
+} from "../../taskList/tasksSlice";
+import LoadingScreen from "../../../common/LoadingScreen/LoadingScreen.js";
+import { HashRouter, Switch, Route } from "react-router-dom";
+
+
 
 function TaskListPage() {
+  const {ifLoading} = useSelector(selectTasks);
   const dimensions = useWindowDimensions();
   let header;
   let appTitle;
@@ -23,8 +36,8 @@ function TaskListPage() {
 
   return (
     <>
-      {header}
 
+      {header}
       <MainContainer
         appTitle={appTitle}
         title={<>Dodaj nowe zadanie</>}
@@ -36,10 +49,12 @@ function TaskListPage() {
         <Search />
       </MainContainer>
 
+   
       <MainContainer buttons={<Buttons />} title={<>Lista zadań</>}>
-        <Tasks />
+      {ifLoading ? <LoadingScreen/> : <Tasks /> } 
         <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
       </MainContainer>
+
     </>
   );
 }

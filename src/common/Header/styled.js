@@ -36,17 +36,18 @@ export const Button = styled.button`
     color: black;
   }
   &:hover {
-    color: rgb(158, 158, 158);
+    color: rgb(97, 97, 97);
     cursor: pointer;
   }
   &:active {
-    color: rgb(158, 158, 158);
+    color: rgb(97, 97, 97);
     transform: scale(0.8);
     background-color:none;
   }
   ${({ disabled }) =>
     disabled === true &&
     css`
+     color: rgb(158, 158, 158);
       &:hover {
         color: rgb(158, 158, 158);
         cursor: auto;
@@ -60,6 +61,17 @@ export const Button = styled.button`
 `;
 export const Span = styled.span`
  color:black;
+ &:hover {
+  color: rgb(97, 97, 97);
+      }
+ ${({ Red }) =>
+    Red &&
+    css`
+      color: #df1616;
+      &:hover {
+        color: #8a0000;
+      }
+      `};
     `;
     
 export const StyledNavLink = styled(NavLink)`
@@ -83,11 +95,11 @@ export const StyledNavLink = styled(NavLink)`
     background-color:none;
   }
   &:hover {
-    color: rgb(158, 158, 158);
+    color: rgb(97, 97, 97);
     cursor: pointer;
   }
   &:active {
-    color: rgb(158, 158, 158);
+    color: rgb(97, 97, 97);
     transform: scale(0.8);
     background-color:none;
     color: black;
@@ -96,11 +108,11 @@ export const StyledNavLink = styled(NavLink)`
     disabled === true &&
     css`
       &:hover {
-        color: rgb(158, 158, 158);
+        color: rgb(97, 97, 97);
         cursor: auto;
       }
       &:active {
-        color: rgb(158, 158, 158);
+        color: rgb(97, 97, 97);
         transform: none;
       }
     `}

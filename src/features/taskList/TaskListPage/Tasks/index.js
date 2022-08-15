@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux/es/exports";
 import { tickTask, removeTask, selectIsTaskHide, selectTasksByQuery } from "../../tasksSlice";
 import { useLocation } from "react-router-dom";
 
+
 const Tasks = () => {
 
    const location = useLocation();
@@ -13,6 +14,7 @@ const Tasks = () => {
 
 
   return (
+
     <TaskList>
       {taskList.map((task) => (
         <Task key={task.id} hide={task.done === true && isTaskHide === true}>
@@ -23,6 +25,8 @@ const Tasks = () => {
         </Task>
       ))}
     </TaskList>
+    
+
   );
 };
 

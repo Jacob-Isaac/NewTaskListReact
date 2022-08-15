@@ -1,11 +1,19 @@
 import React, {useState} from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./styled.css";
-import { StyledNavLink, Navigation, Button, Img } from "../Header/styled";
-// import "./input";
-import menu from "../Header/menu.png"
+import { StyledNavLink, Navigation, Button, Img, Span } from "../Header/styled";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectTasks,
+  fetchExampleTasks,
+  fetchMyTasksGet,
+  fetchMyTasksSave,
+  removeAllTasks,
+} from "../../features/taskList/tasksSlice";
 
 const HeaderMobile = () => {
+  const {ifLoading, ifLoading2, ifLoading3 }= useSelector(selectTasks);
+  const dispatch = useDispatch();
 
     const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
@@ -20,13 +28,27 @@ return (
     <label for="active" class="close"></label>
     <div class="wrapper">
       <ul>
-<li><a><NavLink exact to="/zadania">Zadania</NavLink></a></li>
-<li><a href="#">Zapisz</a></li>
-<li><a href="#">Przykłady</a></li>
-<li><a href="#">Załaduj</a></li>
-<li><a href="#">Usuń Wszystko</a></li>
-<li><a href="#"><NavLink exact to="/author">Autor</NavLink></a></li>
+      <label for="active">
+     <li><NavLink exact to="/zadania">Zadania</NavLink></li>
+     <li><Button onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading}>
+      {ifLoading ? "Zapisz" : <Span>Zapisz</Span> } 
+      </Button></li>
+     
+      <li><Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
+       {ifLoading ? "Przykładowe zadania" : <Span>Przykładowe zadania</Span> } 
+      </Button></li>
+     
+      <li><Button onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading}>
+     {ifLoading ? "Załaduj" : <Span>Załaduj</Span> } 
+      </Button></li>
+
+      <li><Button onClick={() => dispatch(removeAllTasks())} disabled={ifLoading}>
+        {ifLoading ? "Usuń wszystko" : <Span Red>Usuń wszystko</Span> } 
+        </Button></li>
+<li><NavLink exact to="/author">Autor</NavLink></li>
+</label>
 </ul>
+
 </div>
 <div class="content">
       <div class="title">
