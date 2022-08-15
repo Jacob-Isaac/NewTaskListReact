@@ -57,6 +57,12 @@ export const Button = styled.button`
         transform: none;
       }
     `}
+    ${({ Mobile }) =>
+    Mobile &&
+    css`
+font-size: 20px;
+font-weight: normal;
+      `};
     
 `;
 export const Span = styled.span`
@@ -72,6 +78,7 @@ export const Span = styled.span`
         color: #8a0000;
       }
       `};
+     
     `;
     
 export const StyledNavLink = styled(NavLink)`
@@ -116,6 +123,7 @@ export const StyledNavLink = styled(NavLink)`
         transform: none;
       }
     `}
+ 
     background-color:none;
 `;
 

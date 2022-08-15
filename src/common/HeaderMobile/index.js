@@ -1,7 +1,6 @@
-import React, {useState} from "react";
-import { NavLink, Link } from "react-router-dom";
-import "./styled.css";
-import { StyledNavLink, Navigation, Button, Img, Span } from "../Header/styled";
+import React from "react";
+import { NavLink} from "react-router-dom";
+import { Button, Span } from "../Header/styled";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
@@ -10,50 +9,45 @@ import {
   fetchMyTasksSave,
   removeAllTasks,
 } from "../../features/taskList/tasksSlice";
+import { Wrapper, WrapperUl, Input, Content, ContentTitle,MenuButton, Close, LabelSpan } from "./styled.js";
 
 const HeaderMobile = () => {
-  const {ifLoading, ifLoading2, ifLoading3 }= useSelector(selectTasks);
+  const {ifLoading}= useSelector(selectTasks);
   const dispatch = useDispatch();
 
-    const [isActive, setIsActive] = useState(false);
-  const handleClick = () => {
-    setIsActive (current => !current);
-    console.log(isActive);
-  }
- 
 return (
     <>
-    <input type="checkbox" id="active"/>
-    <label for="active" class="menu-btn"><span></span></label>
-    <label for="active" class="close"></label>
-    <div class="wrapper">
-      <ul>
-      <label for="active">
-     <li><NavLink exact to="/zadania">Zadania</NavLink></li>
-     <li><Button onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading}>
-      {ifLoading ? "Zapisz" : <Span>Zapisz</Span> } 
+    <Input type="checkbox" id="active"/>
+    <MenuButton htmlFor="active"><LabelSpan></LabelSpan></MenuButton>
+    <Close htmlFor="active"></Close>
+    <Wrapper>
+      <WrapperUl>
+      <label htmlFor="active">
+     <li><NavLink exact to="/zadania"><Button Mobile>Zadania</Button></NavLink></li>
+     <li><Button Mobile onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading}>
+      {ifLoading ? "Zapisz" : <Span >Zapisz</Span> } 
       </Button></li>
      
-      <li><Button onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
-       {ifLoading ? "Przykładowe zadania" : <Span>Przykładowe zadania</Span> } 
+      <li><Button Mobile onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
+       {ifLoading ? "Przykłady" : <Span Mobile>Przykłady</Span> } 
       </Button></li>
      
-      <li><Button onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading}>
-     {ifLoading ? "Załaduj" : <Span>Załaduj</Span> } 
+      <li><Button Mobile onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading}>
+     {ifLoading ? "Załaduj" : <Span Mobile>Załaduj</Span> } 
       </Button></li>
 
-      <li><Button onClick={() => dispatch(removeAllTasks())} disabled={ifLoading}>
-        {ifLoading ? "Usuń wszystko" : <Span Red>Usuń wszystko</Span> } 
+      <li><Button Mobile onClick={() => dispatch(removeAllTasks())} disabled={ifLoading}>
+        {ifLoading ? "Usuń wszystko" : <Span Red Mobile>Usuń wszystko</Span> } 
         </Button></li>
-<li><NavLink exact to="/author">Autor</NavLink></li>
+<li><NavLink exact to="/author"><Button Mobile>Autor</Button></NavLink></li>
 </label>
-</ul>
+</WrapperUl>
 
-</div>
-<div class="content">
-      <div class="title">
-Lista zadań</div>
-</div>
+</Wrapper>
+<Content>
+      <ContentTitle>
+Lista zadań</ContentTitle>
+</Content>
 </>
  
 );

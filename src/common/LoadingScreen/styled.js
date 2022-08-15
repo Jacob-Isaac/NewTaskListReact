@@ -4,6 +4,7 @@ export const Error = styled.p`
   color: #b50000;
 `;
 export const Cog = styled.img`
+z-index: 1;
 margin-bottom: 50px;
 margin-top: 50px;
   width: 70px;
