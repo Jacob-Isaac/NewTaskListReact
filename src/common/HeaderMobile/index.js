@@ -1,59 +1,63 @@
 import React, {useState} from "react";
-import { NavLink} from "react-router-dom";
-import { Button, Span } from "../Header/styled";
+import { NavLink, Link } from "react-router-dom";
+import "./style.css";
+import { StyledNavLink, Navigation, Button, Img, Span } from "../Header/styled";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectTasks,
-  fetchExampleTasks,
-  fetchMyTasksGet,
   fetchMyTasksSave,
   removeAllTasks,
 } from "../../features/taskList/tasksSlice";
-import { Wrapper, WrapperUl, Input, Content, ContentTitle,MenuButton, Close, LabelSpan } from "./styled.js";
 
 const HeaderMobile = () => {
-  const {ifLoading}= useSelector(selectTasks);
+  const {ifLoading, ifLoading2, ifLoading3 }= useSelector(selectTasks);
   const dispatch = useDispatch();
-  const [checked, setChecked] = useState(false);
-  const toggle = () => setChecked(!checked);
+
+    const [isActive, setIsActive] = useState(false);
+  const handleClick = () => {
+    setIsActive (current => !current);
+    console.log(isActive);
+  }
 
 return (
-    <>
-    <Input type="checkbox" id="active" onChange={toggle}/>
-    <MenuButton for="active"><LabelSpan checked={checked}></LabelSpan></MenuButton>
-    <Close for="active"></Close>
-    <Wrapper>
-      <WrapperUl>
+  <>
+    <div class="cos">
+    <input type="checkbox" id="active"/>
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+      <ul>
       <label for="active">
-     <li><NavLink exact to="/zadania"><Button Mobile>Zadania</Button></NavLink></li>
-     <li><Button Mobile onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading}>
-      {ifLoading ? "Zapisz" : <Span >Zapisz</Span> } 
-      </Button></li>
-     
-      <li><Button Mobile onClick={() => dispatch(fetchExampleTasks())} disabled={ifLoading}>
-       {ifLoading ? "Przykłady" : <Span Mobile>Przykłady</Span> } 
-      </Button></li>
-     
-      <li><Button Mobile onClick={() => dispatch(fetchMyTasksGet())} disabled={ifLoading}>
-     {ifLoading ? "Załaduj" : <Span Mobile>Załaduj</Span> } 
+     <li><NavLink exact to="/zadania">Zadania</NavLink></li>
+     <li><Button onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading}>
+      {ifLoading ? "Zapisz" : <Span>Zapisz</Span> } 
       </Button></li>
 
-      <li><Button Mobile onClick={() => dispatch(removeAllTasks())} disabled={ifLoading}>
-        {ifLoading ? "Usuń wszystko" : <Span Red Mobile>Usuń wszystko</Span> } 
+      <li><Button disabled={ifLoading}>
+       {ifLoading ? "Przykładowe zadania" : <Span>Przykładowe zadania</Span> } 
+      </Button></li>
+
+      <li><Button disabled={ifLoading}>
+     {ifLoading ? "Załaduj" : <Span>Załaduj</Span> } 
+      </Button></li>
+
+      <li><Button onClick={() => dispatch(removeAllTasks())} disabled={ifLoading}>
+        {ifLoading ? "Usuń wszystko" : <Span Red>Usuń wszystko</Span> } 
         </Button></li>
-<li><NavLink exact to="/author"><Button Mobile>Autor</Button></NavLink></li>
+<li><NavLink exact to="/author">Autor</NavLink></li>
 </label>
-</WrapperUl>
+</ul>
 
-</Wrapper>
-<Content>
-      <ContentTitle>
-Lista zadań</ContentTitle>
-</Content>
+</div>
+<div class="content">
+      <div class="title">
+Lista zadań</div>
+</div>
+</div>
+<div class="hihi"></div>
 </>
- 
-);
 
+);
 };
 
 export default HeaderMobile;
