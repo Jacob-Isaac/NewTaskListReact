@@ -11,7 +11,7 @@ import {
 } from "../../features/taskList/tasksSlice";
 import { Wrapper, WrapperUl, Input, Content, ContentTitle,MenuButton, Close, LabelSpan, MarginBottom, NavBar } from "./styled.js";
 
-const HeaderMobile = () => {
+const HeaderMobile = ({contentTitle}) => {
   const {ifLoading}= useSelector(selectTasks);
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
@@ -21,11 +21,11 @@ return (
     <>
     <NavBar>
     <Input type="checkbox" id="active" onChange={toggle}/>
-    <MenuButton for="active"><LabelSpan checked={checked}></LabelSpan></MenuButton>
-    <Close for="active"></Close>
+    <MenuButton htmlFor="active"><LabelSpan checked={checked}></LabelSpan></MenuButton>
+    <Close htmlFor="active"></Close>
     <Wrapper>
       <WrapperUl>
-      <label for="active">
+      <label htmlFor="active">
      <li><NavLink exact to="/zadania"><Button Mobile>Zadania</Button></NavLink></li>
      <li><Button Mobile onClick={() => dispatch(fetchMyTasksSave())} disabled={ifLoading}>
       {ifLoading ? "Zapisz" : <Span >Zapisz</Span> } 
@@ -50,7 +50,7 @@ return (
 
 <Content>
       <ContentTitle>
-Lista zadań</ContentTitle>
+{contentTitle}</ContentTitle>
 </Content>
 </NavBar>
 <MarginBottom/>

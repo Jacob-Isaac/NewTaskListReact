@@ -28,9 +28,9 @@ function TaskListPage() {
   let header;
   let appTitle;
   if (dimensions.width < 860) {
-    header = <HeaderMobile />;
+    // header = <HeaderMobile contentTitle={<LoadingScreen/>}/>;
     appTitle = "";
-    ifLoading ? appTitle = <LoadingScreen/> : appTitle="";
+    ifLoading ? header = <LoadingScreen/> : header = <HeaderMobile contentTitle={<>Lista zadań</>} />;
     content = <Tasks/>
   } else {
     header = <Header />;

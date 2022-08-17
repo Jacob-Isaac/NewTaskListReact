@@ -7,18 +7,31 @@ z-index:3;
 overflow-y: scroll;
     -webkit-overflow-scrolling:touch;
     position: fixed;
-    top: -200%;
+    top: -100%;
     height: 100%;
     width: 100%;
     background-color: rgb(211, 211, 211);
     transition: all 0.4s ease-in-out;
+
 `;
 
 export const WrapperUl = styled.ul`
     position: absolute;
     top: 65%;
-    left: 48%;
     height: 100%;
+    @media (min-width: 550px) {
+    left: 50%; 
+  }
+  @media (max-width: 550px) {
+    left: 49%;
+  }
+  @media (max-width: 475px) {
+    left: 48%; 
+  }
+  @media (max-width: 400px) { 
+    left: 47%;
+  }
+
     transform: translate(-54%, -50%);
     list-style: none;
     text-align: center;
@@ -97,10 +110,23 @@ export const Input = styled.input`
 `;
 
 export const Cog = styled.img`
+position: fixed;
 z-index:1;
-    margin-bottom: 50px;
-    /* margin-left: 50px; */
-    margin-top: 50px;
+ 
+@media (min-width: 550px) {
+  left: 45%;
+    top: 50%;
+    bottom: 50%;
+    right: 55%;
+  }
+  @media (max-width: 550px) {
+  left: 42%;
+    top: 50%;
+    bottom: 50%;
+    right:50%;
+  }
+
+
       width: 70px;
       height: 70px;
       animation: transform 1.9s;
