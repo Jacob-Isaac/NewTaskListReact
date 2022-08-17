@@ -31,7 +31,7 @@ function TaskListPage() {
     header = <HeaderMobile />;
     appTitle = "";
     ifLoading ? appTitle = <LoadingScreen/> : appTitle="";
-    ifLoading && (content = <Tasks/>);
+    content = <Tasks/>
   } else {
     header = <Header />;
     appTitle = "Lista zadań";
