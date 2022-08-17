@@ -27,7 +27,7 @@ function TaskListPage() {
   let content;
   let header;
   let appTitle;
-  if (dimensions.width < 1000) {
+  if (dimensions.width < 860) {
     header = <HeaderMobile />;
     appTitle = "";
     ifLoading ? appTitle = <LoadingScreen/> : appTitle="";
