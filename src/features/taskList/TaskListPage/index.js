@@ -24,15 +24,18 @@ import { HashRouter, Switch, Route } from "react-router-dom";
 function TaskListPage() {
   const {ifLoading} = useSelector(selectTasks);
   const dimensions = useWindowDimensions();
+  let content;
   let header;
   let appTitle;
   if (dimensions.width < 1000) {
     header = <HeaderMobile />;
     appTitle = "";
     ifLoading ? appTitle = <LoadingScreen/> : appTitle="";
+    ifLoading && (content = <Tasks/>);
   } else {
     header = <Header />;
     appTitle = "Lista zadań";
+    ifLoading ? content = <LoadingScreen/> : content = <Tasks/>;
   }
 
   return (
@@ -52,7 +55,7 @@ function TaskListPage() {
 
    
       <MainContainer buttons={<Buttons />} title={<>Lista zadań</>}>
-      {ifLoading ? <LoadingScreen/> : <Tasks /> } 
+      {content} 
         <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
       </MainContainer>
 

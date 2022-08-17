@@ -2,10 +2,12 @@ import styled, {css} from "styled-components";
 
 
 export const Wrapper = styled.div`
-z-index:2;
+z-index:3;
 -webkit-tap-highlight-color: transparent;
+overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
     position: fixed;
-    top: -100%;
+    top: -200%;
     height: 100%;
     width: 100%;
     background-color: rgb(211, 211, 211);
@@ -14,9 +16,9 @@ z-index:2;
 
 export const WrapperUl = styled.ul`
     position: absolute;
-    top: 60%;
-    left: 46.5%;
-    height: 90%;
+    top: 65%;
+    left: 48%;
+    height: 100%;
     transform: translate(-54%, -50%);
     list-style: none;
     text-align: center;
@@ -25,7 +27,7 @@ export const WrapperUl = styled.ul`
 export const MenuButton = styled.label`
     -webkit-tap-highlight-color: transparent;
     position: absolute;
-    z-index:3;
+    z-index:4;
     right: 20px;
     /*left: 20px; */
     top: 12px;
@@ -95,8 +97,9 @@ export const Input = styled.input`
 `;
 
 export const Cog = styled.img`
-
+z-index:1;
     margin-bottom: 50px;
+    /* margin-left: 50px; */
     margin-top: 50px;
       width: 70px;
       height: 70px;
@@ -131,11 +134,23 @@ export const ContentTitle = styled.div`
 `;
 
 export const Close = styled.label`
-	z-index:1;
+	z-index:2;
 	width: 100%;
 	height: 100%;
 	pointer-events: none;
 	transition: background .6s;
 `;
 
+export const MarginBottom = styled.div`
+margin-bottom: 100px;
+`;
+
+export const NavBar = styled.div`
+-webkit-tap-highlight-color: transparent;
+position: fixed;
+top: 0;
+
+height: 10%;
+width: 100%;
+`;
 
