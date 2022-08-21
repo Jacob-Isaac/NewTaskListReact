@@ -4,7 +4,6 @@ import {
   put,
   select,
   takeLatest,
-  takeEvery,
 } from "redux-saga/effects";
 import { getExampleTasks } from "./getExampleTasks";
 import { fetchExampleTasks,fetchMyTasksSave, fetchMyTasksGet, setTaskList, selectTasks, setLoading, removeAllTasks } from "./tasksSlice";

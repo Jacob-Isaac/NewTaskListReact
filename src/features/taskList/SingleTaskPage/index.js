@@ -20,3 +20,5 @@ function SingleTaskPage() {
 }
 
 export default SingleTaskPage;
+
+// dodać obsługę blędów

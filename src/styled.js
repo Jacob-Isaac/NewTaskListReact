@@ -32,3 +32,5 @@ export const StandardBox = css`
 //   color: red;
 // }
 // `;
+
+// zrobić style do kolorów

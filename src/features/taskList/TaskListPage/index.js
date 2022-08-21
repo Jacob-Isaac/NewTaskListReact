@@ -8,16 +8,11 @@ import MainContainer from "../../../common/MainContainer";
 import HeaderMobile from "../../../common/HeaderMobile/index.js";
 import Header from "../../../common/Header/index.js";
 import useWindowDimensions from "../../../common/customHooks/useWindowDimensions.js";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  selectTasks,
-  fetchExampleTasks,
-  fetchMyTasksGet,
-  fetchMyTasksSave,
-  removeAllTasks,
-} from "../../taskList/tasksSlice";
+import { useSelector } from "react-redux";
+import {selectTasks} from "../../taskList/tasksSlice";
 import LoadingScreen from "../../../common/LoadingScreen/LoadingScreen.js";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import LoadingScreenMobile from "../../../common/LoadingScreen/LoadingScreenMobile.js";
+
 
 
 
@@ -28,15 +23,20 @@ function TaskListPage() {
   let header;
   let appTitle;
   if (dimensions.width < 860) {
-    // header = <HeaderMobile contentTitle={<LoadingScreen/>}/>;
     appTitle = "";
-    ifLoading ? header = <LoadingScreen/> : header = <HeaderMobile contentTitle={<>Lista zadań</>} />;
+    ifLoading ? header = <LoadingScreenMobile/> : header = <HeaderMobile contentTitle={<>Lista zadań</>} />;
     content = <Tasks/>
   } else {
     header = <Header />;
     appTitle = "Lista zadań";
-    ifLoading ? content = <LoadingScreen/> : content = <Tasks/>;
+   if (ifLoading) {
+    content = <LoadingScreen/>;
+   } 
+   else {
+    content = <Tasks/>;
+   }
   }
+  // wrzucić to co wyżej do hooka
 
   return (
     <>
