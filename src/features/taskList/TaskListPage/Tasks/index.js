@@ -23,10 +23,9 @@ const Tasks = () => {
           <Button Red onClick={() => dispatch(removeTask(task.id))}>🗑️</Button>
           <p></p>
         </Task>
+        
       ))}
     </TaskList>
-    
-
   );
 };
 

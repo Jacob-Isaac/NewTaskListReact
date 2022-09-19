@@ -174,7 +174,7 @@ export const NavBar = styled.div`
   -webkit-tap-highlight-color: transparent;
   position: fixed;
   top: 0;
-
   height: 10%;
   width: 100%;
+  min-width:265px;
 `;
