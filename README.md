@@ -1,10 +1,16 @@
-# Getting Started with Create React App
+# Getting Started
+
+Extended version of Tasks-List, created by using React-Redux, React-Saga and React-Router. This version contains navigation header (both for mobile and desktop) , as well also saving, loading from .json and navigate to other pages.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Project Adress
+# Demo
 
 https://jacob-isaac.github.io/NewTaskListReact/
+
+# Presentation
+
+![myGif]
 
 ## Available Scripts
 
