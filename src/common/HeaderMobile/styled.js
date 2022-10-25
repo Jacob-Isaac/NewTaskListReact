@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   top: -100%;
   height: 100%;
   width: 100%;
-  background-color: rgb(245 245 245);
+  background-color: ${({ theme }) => theme.color.dirtWhite};
   transition: all 0.4s ease-in-out;
 `;
 
@@ -60,7 +60,7 @@ export const MenuButton = styled.label`
     top: calc(50% - 1px);
     left: 30%;
     width: 40%;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid ${({ theme }) => theme.color.black};
     transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   &:after {
@@ -70,7 +70,7 @@ export const MenuButton = styled.label`
     top: calc(50% - 1px);
     left: 30%;
     width: 40%;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid ${({ theme }) => theme.color.black};
     transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 `;
@@ -81,7 +81,7 @@ export const LabelSpan = styled.span`
   top: calc(50% - 1px);
   left: 30%;
   width: 40%;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid ${({ theme }) => theme.color.black};
   transition: transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   ${({ checked }) =>
     checked === true &&
@@ -99,11 +99,11 @@ export const Input = styled.input`
   &:checked + ${MenuButton} {
     &:before {
       transform: rotate(45deg);
-      border-color: rgb(0, 0, 0);
+      border-color: ${({ theme }) => theme.color.black};
     }
     &:after {
       transform: rotate(-45deg);
-      border-color: rgb(0, 0, 0);
+      border-color: ${({ theme }) => theme.color.black};
     }
   }
 `;
@@ -145,9 +145,9 @@ export const Content = styled.div`
   text-align: left;
   width: 100%;
   height: 80px;
-  color: #202020;
+  color: ${({ theme }) => theme.color.black};
   margin-bottom: 30px;
-  background-color: rgb(245 245 245 / 90%);
+  background-color: ${({ theme }) => theme.color.transparentWhite};;
   box-shadow: 0.5px 0px 8px;
 `;
 

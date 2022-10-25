@@ -4,10 +4,10 @@ export const Button = styled.button`
   margin-right: 11px;
   background-color: transparent;
   border: none;
-  color: black;
+  color: ${({ theme }) => theme.color.black};
   -webkit-tap-highlight-color: transparent;
   &:hover {
-    color: rgb(158, 158, 158);
+    color: ${({ theme }) => theme.color.niceGray};
     cursor: pointer;
   }
   @media (max-width: 800px) {
@@ -16,11 +16,11 @@ export const Button = styled.button`
   }
 `;
 export const Span = styled.span`
-  color: black;
+  color: ${({ theme }) => theme.color.black};
   ${({ disabled }) =>
     disabled === true &&
     css`
-      color: rgb(158, 158, 158);
+      color: ${({ theme }) => theme.color.niceGray};
       &:hover {
         cursor: context-menu;
       }

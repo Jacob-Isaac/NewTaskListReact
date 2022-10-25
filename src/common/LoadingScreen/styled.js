@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Error = styled.p`
-  color: #b50000;
+  color: ${({ theme }) => theme.color.red};
 `;
 export const Cog = styled.img`
 z-index: 1;

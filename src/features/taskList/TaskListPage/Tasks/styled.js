@@ -5,7 +5,7 @@ export const Task = styled.span`
   display: flex;
   padding-bottom: 9px;
   margin-bottom: 9px;
-  border-bottom: 1px solid rgb(158, 157, 157);
+  border-bottom: 1px solid ${({ theme }) => theme.color.border};
   ${({ hide }) =>
     hide &&
     css`
@@ -22,17 +22,17 @@ export const Button = styled.button`
   ${({ Green }) =>
     Green &&
     css`
-      background-color: teal;
+      background-color: ${({ theme }) => theme.color.teal};
       &:hover {
-        background-color: hsl(180, 100%, 28%);
+        background-color: ${({ theme }) => theme.color.tealBrighter};
       }
     `};
   ${({ Red }) =>
     Red &&
     css`
-      background-color: #df1616;
+      background-color: ${({ theme }) => theme.color.red};
       &:hover {
-        background-color: #df4747;
+        background-color: ${({ theme }) => theme.color.redBrighter};
       }
     `};
 `;
@@ -62,6 +62,6 @@ export const StyledLink = styled(Link)`
   color: black;
   text-decoration: none;
   &:hover {
-    color: rgb(158, 158, 158);
+    color: ${({ theme }) => theme.color.niceGray};
   }
 `;

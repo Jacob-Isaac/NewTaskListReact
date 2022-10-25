@@ -1,17 +1,22 @@
 import { Wrapper, Article } from "./styled";
 import Footer from "../../common/Footer";
 
-
-
-const AuthorPage = () =>  (
+const AuthorPage = () => (
   <>
-      <Wrapper>
-          <Article>
+    <Wrapper>
+      <Article>
         <h3>Praca</h3>
         <p>
-          Witaj ! <br/>To strona o mnie: Jestem
-          <span><b> Jakub</b></span>, niektórzy mówią na mnie
-          <span><b> Kuba</b></span>. Od lat pracuję w handlu, na różnych stanowiskach. Zajmowałem się
+          Witaj ! <br />
+          To strona o mnie: Jestem
+          <span>
+            <b> Jakub</b>
+          </span>
+          , niektórzy mówią na mnie
+          <span>
+            <b> Kuba</b>
+          </span>
+          . Od lat pracuję w handlu, na różnych stanowiskach. Zajmowałem się
           sprzedażą, negocjowaniem zamówień, czy prezentowaniem produktu
           klientom. Zawsze jednak trzymałem się branży elektronicznej w tym AGD.
           W obecnych czasach rola osób fizycznych w sprzedaży staje się coraz
@@ -27,10 +32,9 @@ const AuthorPage = () =>  (
           sposób aktywnego spędzania czasu.
         </p>
       </Article>
-      </Wrapper>
-        <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
-        </>
-  );
- 
+    </Wrapper>
+    <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
+  </>
+);
 
 export default AuthorPage;

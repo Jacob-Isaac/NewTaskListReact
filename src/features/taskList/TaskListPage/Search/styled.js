@@ -8,6 +8,5 @@ export const Wrapper = styled.div`
   gap: 20px;
 `;
 export const Input = styled.input`
-  /* border-color: rgb(100 100 100 / 70%); */
   padding: 10px;
 `;

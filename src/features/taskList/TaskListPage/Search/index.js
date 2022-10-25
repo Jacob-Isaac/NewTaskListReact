@@ -1,33 +1,31 @@
 import React from "react";
-import {Wrapper, Input} from "./styled";
+import { Wrapper, Input } from "./styled";
 import useQueryParameter from "./useQueryParameter";
-import searchQueryParamName from "../../../../common/searchQueryParamName"
+import searchQueryParamName from "../../../../common/searchQueryParamName";
 import useReplaceQueryParameter from "./useReplaceQueryParameter";
 
-
 const Search = () => {
-const query = useQueryParameter(searchQueryParamName);
-const replaceQueryParameter = useReplaceQueryParameter();
+  const query = useQueryParameter(searchQueryParamName);
+  const replaceQueryParameter = useReplaceQueryParameter();
 
-const onInputChange = (event) => {
+  const onInputChange = (event) => {
     replaceQueryParameter({
-key: searchQueryParamName,
-value: event.target.value.trim() !== "" ? event.target.value : undefined,
+      key: searchQueryParamName,
+      value: event.target.value.trim() !== "" ? event.target.value : undefined,
     });
-};
+  };
 
-    return (
-        <>
-       <Wrapper>
-        <Input 
-        placeholder="Filtruj zadania" 
-        value = {query || ""}
-        onInput = {onInputChange}
+  return (
+    <>
+      <Wrapper>
+        <Input
+          placeholder="Filtruj zadania"
+          value={query || ""}
+          onInput={onInputChange}
         />
-        </Wrapper>
-        </>
-        
-    );
-}
+      </Wrapper>
+    </>
+  );
+};
 
 export default Search;

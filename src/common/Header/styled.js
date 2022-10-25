@@ -7,10 +7,8 @@ export const Navigation = styled.div`
   justify-content: center;
   min-width: 200px;
   width: 100%;
-  /* height: 80px; */
   margin-bottom: 50px;
-  background-color: rgb(255 255 255 / 80%);
-  color: rgb(24, 24, 24);
+  background-color: ${({ theme }) => theme.color.transparentWhite};
   box-shadow: 0.5px 0px 8px;
   @media (max-width: 850px) {
     display: flex;
@@ -33,27 +31,27 @@ export const Button = styled.button`
   font-weight: bolder;
   transition: all 0.01s ease-in-out;
   &:visited {
-    color: black;
+    color: ${({ theme }) => theme.color.black};
   }
   &:hover {
-    color: rgb(97, 97, 97);
+    color: ${({ theme }) => theme.color.gray};
     cursor: pointer;
   }
   &:active {
-    color: rgb(97, 97, 97);
+    color: ${({ theme }) => theme.color.gray};
     transform: scale(0.8);
     background-color:none;
   }
   ${({ disabled }) =>
     disabled === true &&
     css`
-     color: rgb(158, 158, 158);
+     color: ${({ theme }) => theme.color.niceGray};
       &:hover {
-        color: rgb(158, 158, 158);
+        color: ${({ theme }) => theme.color.niceGray};
         cursor: auto;
       }
       &:active {
-        color: rgb(158, 158, 158);
+        color: ${({ theme }) => theme.color.niceGray};
         transform: none;
       }
     `}
@@ -66,16 +64,16 @@ font-weight: normal;
     
 `;
 export const Span = styled.span`
- color:black;
+ color:${({ theme }) => theme.color.black};
  &:hover {
-  color: rgb(97, 97, 97);
+  color: ${({ theme }) => theme.color.gray};
       }
  ${({ Red }) =>
     Red &&
     css`
-      color: #df1616;
+      color: ${({ theme }) => theme.color.red};
       &:hover {
-        color: #8a0000;
+        color: ${({ theme }) => theme.color.niceRed};
       }
       `};
      
@@ -89,7 +87,7 @@ export const StyledNavLink = styled(NavLink)`
   background-color: transparent;
   border: none;
   text-decoration: none;
-  color: black;
+  color: ${({ theme }) => theme.color.black};
   margin-left: 22px;
   margin-right: 22px;
   margin-top: 22px;
@@ -98,32 +96,31 @@ export const StyledNavLink = styled(NavLink)`
   transition: all 0.01s ease-in-out;
   -webkit-tap-highlight-color: transparent;
   &:visited {
-    color: black;
+    color: ${({ theme }) => theme.color.black};
     background-color:none;
   }
   &:hover {
-    color: rgb(97, 97, 97);
+    color: ${({ theme }) => theme.color.gray};
     cursor: pointer;
   }
   &:active {
-    color: rgb(97, 97, 97);
+    color: ${({ theme }) => theme.color.gray};
     transform: scale(0.8);
     background-color:none;
-    color: black;
+    color: ${({ theme }) => theme.color.black};
   }
   ${({ disabled }) =>
     disabled === true &&
     css`
       &:hover {
-        color: rgb(97, 97, 97);
+        color: ${({ theme }) => theme.color.gray};
         cursor: auto;
       }
       &:active {
-        color: rgb(97, 97, 97);
+        color: ${({ theme }) => theme.color.gray};
         transform: none;
       }
     `}
- 
     background-color:none;
 `;
 
@@ -151,18 +148,3 @@ export const Img = styled.img`
     `}
 
 `;
-
-// export const Navigation = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   min-width: 200px;
-//   width: 100%;
-//   margin-bottom: 50px;
-//   background-color: rgb(255 255 255 / 80%);
-//   color: rgb(24, 24, 24);
-//   box-shadow: 0.5px 0px 8px;
-//   @media (max-width: 850px) {
-//     display: flex;
-//     flex-direction: column;
-//   }
-// `;

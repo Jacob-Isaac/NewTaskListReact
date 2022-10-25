@@ -4,7 +4,7 @@ import { StandardBox } from "../../styled";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: flex-start;
-  border-bottom: 1px solid rgb(100, 100, 100);
+  border-bottom: 1px solid ${({ theme }) => theme.color.border};
   margin-bottom: 15px;
   margin-top: 15px;
   @media (max-width: 800px) {
@@ -27,7 +27,7 @@ export const Space = styled.div`
   }
 `;
 export const H1 = styled.h1`
-  color: black;
+  color: ${({ theme }) => theme.color.black};
   min-width: 250px;
   width: 90%;
   margin: auto;

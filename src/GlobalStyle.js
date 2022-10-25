@@ -12,7 +12,7 @@ html {
 }
 body {
   font-family: 'Montserrat', cursive, sans-serif;
-  background: #EBEBEB;
+  background-color: ${({ theme }) => theme.color.gallery};
   text-align: center;
   max-width: 5000px;
   margin: 0 auto;

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const SubmitButton = styled.button`
   cursor: pointer;
-  background-color: teal;
-  color: rgb(233, 233, 233);
+  background-color: ${({ theme }) => theme.color.teal};
+  color: ${({ theme }) => theme.color.white};
   border: none;
   padding: 10px;
   margin-left: 12px;
@@ -12,18 +12,18 @@ export const SubmitButton = styled.button`
     align-self: stretch;
     margin-left: 0px;
     &:hover {
-      background-color: hsl(190, 100%, 28%);
+      background-color: ${({ theme }) => theme.color.tealBrighter};
     }
   }
   @media (min-width: 800px) {
     &:hover {
       transition: all 0.2s ease 0s;
       transform: scale(1.1);
-      background-color: rgb(0, 140, 140);
+      background-color: ${({ theme }) => theme.color.teal};
     }
     &:active {
       transition: all 0.1s ease 0s;
-      background-color: rgb(0, 160, 160);
+      background-color: ${({ theme }) => theme.color.persianGreen};
     }
   }
 `;

@@ -1,0 +1,30 @@
+export const theme = {
+    color: {
+        teal: "#008080",
+        tealBrighter: "008F8F",
+        red: "#DF1616",
+        redBrighter: "#DF4747",
+        gallery: "#EBEBEB",
+        white: "#E9E9E9",
+        transparentWhite: "rgb(255 255 255 / 90%)",
+        border: "#9D9D9D",
+        niceGray: "#9E9E9E",
+        persianGreen: "#00A0A0",
+        gray: "#616161",
+        red: "#B50000",
+        black: "#212121",
+        dirtWhite: "#F5F5F5",
+        niceRed: "#8a0000",
+    },
+    breakpoint: {
+        maxContentSize: 1368,
+        tabletMax: 968,
+        mobileMax: 650,
+        between: 867,
+    },
+    fontSize: {
+        regular: 400,
+        medium: 500,
+        bold: 600,
+    },
+};
