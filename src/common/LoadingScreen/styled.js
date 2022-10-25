@@ -10,6 +10,9 @@ export const Cog = styled.img`
   width: 70px;
   height: 70px;
   animation: transform 1.9s;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    margin-top: 40%;
+  }
   @keyframes transform {
     0% {
       transform: rotate(0deg);

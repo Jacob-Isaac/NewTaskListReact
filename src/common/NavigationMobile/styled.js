@@ -109,9 +109,6 @@ export const Input = styled.input`
 `;
 
 export const Cog = styled.img`
-  position: fixed;
-  z-index: 1;
-
   @media (min-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     left: 45%;
     top: 50%;
