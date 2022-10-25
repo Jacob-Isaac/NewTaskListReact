@@ -22,7 +22,7 @@ import {
   NavBar,
 } from "./styled.js";
 
-const HeaderMobile = ({ contentTitle }) => {
+const NavigationMobile = ({ contentTitle }) => {
   const { ifLoading } = useSelector(selectTasks);
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
@@ -107,4 +107,4 @@ const HeaderMobile = ({ contentTitle }) => {
   );
 };
 
-export default HeaderMobile;
+export default NavigationMobile;

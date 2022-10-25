@@ -1,4 +1,4 @@
-import { Span, StyledNavLink, Navigation, Button } from "./styled";
+import { Span, StyledNavLink, Wrapper, Button } from "./styled";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -9,12 +9,12 @@ import {
   removeAllTasks,
 } from "../../features/taskList/tasksSlice";
 
-const Header = ({ title }) => {
+const Navigation = ({ title }) => {
   const { ifLoading } = useSelector(selectTasks);
   const dispatch = useDispatch();
 
   return (
-    <Navigation>
+    <Wrapper>
       {title}
 
       <StyledNavLink exact to="/zadania">
@@ -43,8 +43,8 @@ const Header = ({ title }) => {
       <StyledNavLink exact to="/author">
         <Span>Autor</Span>
       </StyledNavLink>
-    </Navigation>
+    </Wrapper>
   );
 };
 
-export default Header;
+export default Navigation;

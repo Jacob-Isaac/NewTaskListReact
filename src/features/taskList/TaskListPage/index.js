@@ -5,8 +5,8 @@ import Footer from "../../../common/Footer";
 import Buttons from "./Buttons";
 import Search from "./Search";
 import MainContainer from "../../../common/MainContainer";
-import HeaderMobile from "../../../common/NavigationMobile/index.js";
-import Header from "../../../common/Navigation/index.js";
+import NavigationMobile from "../../../common/NavigationMobile/index.js";
+import Navigation from "../../../common/Navigation/index.js";
 import useWindowDimensions from "../../../common/customHooks/useWindowDimensions.js";
 import { useSelector } from "react-redux";
 import { selectTasks } from "../../taskList/tasksSlice";
@@ -23,10 +23,10 @@ function TaskListPage() {
     appTitle = "";
     ifLoading
       ? (header = <LoadingScreenMobile />)
-      : (header = <HeaderMobile contentTitle={<>Lista zadań</>} />);
+      : (header = <NavigationMobile contentTitle={<>Lista zadań</>} />);
     content = <Tasks />;
   } else {
-    header = <Header />;
+    header = <Navigation />;
     appTitle = "Lista zadań";
     if (ifLoading) {
       content = <LoadingScreen />;

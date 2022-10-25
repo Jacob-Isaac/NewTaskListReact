@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { css } from "styled-components";
 
-export const Navigation = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   min-width: 200px;
