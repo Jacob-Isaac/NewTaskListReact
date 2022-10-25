@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   top: -100%;
   height: 100%;
   width: 100%;
-  background-color: rgb(211, 211, 211);
+  background-color: rgb(245 245 245);
   transition: all 0.4s ease-in-out;
 `;
 
@@ -44,7 +44,6 @@ export const MenuButton = styled.label`
   position: absolute;
   z-index: 4;
   right: 20px;
-  /*left: 20px; */
   top: 12px;
   height: 50px;
   width: 50px;
@@ -148,7 +147,8 @@ export const Content = styled.div`
   height: 80px;
   color: #202020;
   margin-bottom: 30px;
-  background-color: rgb(255 255 255 / 80%);
+  background-color: rgb(245 245 245 / 90%);
+  box-shadow: 0.5px 0px 8px;
 `;
 
 export const ContentTitle = styled.div`
@@ -176,5 +176,5 @@ export const NavBar = styled.div`
   top: 0;
   height: 10%;
   width: 100%;
-  min-width:265px;
+  min-width: 265px;
 `;

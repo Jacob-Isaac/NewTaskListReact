@@ -12,7 +12,7 @@ html {
 }
 body {
   font-family: 'Montserrat', cursive, sans-serif;
-  background: #4b4d66;
+  background: #EBEBEB;
   text-align: center;
   max-width: 5000px;
   margin: 0 auto;
