@@ -38,7 +38,7 @@ export const Button = styled.button`
 `;
 
 export const Content = styled.span`
- text-align: justify;
+  text-align: justify;
   flex-grow: 1;
   margin: 5px 15px 5px 15px;
   ${({ done }) =>

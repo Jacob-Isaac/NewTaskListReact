@@ -1,20 +1,24 @@
-import {
-  call,
-  delay,
-  put,
-  select,
-  takeLatest,
-} from "redux-saga/effects";
+import { call, delay, put, select, takeLatest } from "redux-saga/effects";
 import { getExampleTasks } from "./getExampleTasks";
-import { fetchExampleTasks,fetchMyTasksSave, fetchMyTasksGet, setTaskList, selectTasks, setLoading, removeAllTasks } from "./tasksSlice";
-import { saveTasksInLocalStorage, getTasksFromLocalStorage } from "./tasksLocalStorage";
+import {
+  fetchExampleTasks,
+  fetchMyTasksSave,
+  fetchMyTasksGet,
+  setTaskList,
+  selectTasks,
+  setLoading,
+  removeAllTasks,
+} from "./tasksSlice";
+import {
+  saveTasksInLocalStorage,
+  getTasksFromLocalStorage,
+} from "./tasksLocalStorage";
 
 function* fetchExampleTasksWorker() {
   try {
     yield delay(1000);
-      const exampleTasks = yield call(getExampleTasks);
-      yield put(setTaskList(exampleTasks));
-
+    const exampleTasks = yield call(getExampleTasks);
+    yield put(setTaskList(exampleTasks));
   } catch (error) {
     yield call(alert("coś poszło nie tak! Spróbuj później :)"));
   }
@@ -46,13 +50,9 @@ function* removeAllTasksWorker() {
   }
 }
 
-
 export function* tasksSaga() {
   yield takeLatest(fetchExampleTasks.type, fetchExampleTasksWorker);
   yield takeLatest(fetchMyTasksSave.type, saveTasksInLocalStorageWorker);
   yield takeLatest(fetchMyTasksGet.type, getTasksFromLocalStorageWorker);
   yield takeLatest(removeAllTasks.type, removeAllTasksWorker);
-  // yield takeLatest("*", saveTasksInLocalStorageWorker);
-  // zamiast gwiazdki fetchMyTasks.type, i potem to co już jest  - stworzyć ten 
-  //fetch w tasks Slice !
 }

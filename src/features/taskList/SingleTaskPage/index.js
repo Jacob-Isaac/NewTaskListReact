@@ -9,12 +9,13 @@ function SingleTaskPage() {
   const task = useSelector((state) => getTaskById(state, params.id));
   return (
     <>
-    <Wrapper>
+      <Wrapper>
         <b>Treść:</b> {task ? task.content : "Nie znaleziono zadania"}
-        <br/><br/>
+        <br />
+        <br />
         <b>Ukończono:</b> {task.done ? "Tak" : "Nie"}
-        </Wrapper>
-        <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
+      </Wrapper>
+      <Footer text="©Copyright 2022 by Jakub Nowakowski - wszystkie prawa zastrzeżone" />
     </>
   );
 }

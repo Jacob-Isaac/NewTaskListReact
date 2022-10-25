@@ -5,8 +5,6 @@ const taskListSlice = createSlice({
   name: "taskList",
   initialState: {
     taskList: getTasksFromLocalStorage(),
-    // next step :  getTasks tylko wtedy jak klikniemy , stworzyć osobny fetch getMyTasks
-    // taskList: [],
     isTaskHide: false,
     ifLoading: false,
   },
@@ -16,7 +14,7 @@ const taskListSlice = createSlice({
       state.taskList.push(newTask);
     },
     hideAllTasks: (state) => {
-     state.isTaskHide = !state.isTaskHide;
+      state.isTaskHide = !state.isTaskHide;
     },
     tickTask: (state, { payload: id }) => {
       const index = state.taskList.findIndex((task) => task.id === id);
@@ -35,10 +33,10 @@ const taskListSlice = createSlice({
       state.ifLoading = true;
     },
     doneAllTasks: (state) => {
-      if (state.taskList.every(({done}) => done)) {
-          for (const task of state.taskList) {
-            task.done = false;
-          }
+      if (state.taskList.every(({ done }) => done)) {
+        for (const task of state.taskList) {
+          task.done = false;
+        }
       } else {
         for (const task of state.taskList) {
           task.done = true;
@@ -58,14 +56,13 @@ const taskListSlice = createSlice({
     setTaskList: (state, { payload: tasks }) => {
       state.taskList = tasks;
       state.ifLoading = false;
-      state.ifLoading= false;
+      state.ifLoading = false;
     },
     setLoading: (state) => {
       state.ifLoading = false;
     },
   },
 });
-
 
 export const {
   addTask,
@@ -83,20 +80,22 @@ export const {
 } = taskListSlice.actions;
 
 export const selectTasks = (state) => state.taskList;
-export const selectAreTasksEmpty = (state) => selectTasks(state).taskList.length === 0;
-export const selectIsEveryTaskDone = (state) => selectTasks(state).taskList.every(({done}) => done);
+export const selectAreTasksEmpty = (state) =>
+  selectTasks(state).taskList.length === 0;
+export const selectIsEveryTaskDone = (state) =>
+  selectTasks(state).taskList.every(({ done }) => done);
 export const selectIsTaskHide = (state) => selectTasks(state).isTaskHide;
-export const getTaskById = (state, taskId) => selectTasks(state).taskList.find(({id}) => id === taskId);
- 
- 
- export const selectTasksByQuery = (state, query) => {
-   const taskList = selectTasks(state);
-   if (!query || query.trim() === "") {
-      return taskList.taskList; 
- }
-   return taskList.taskList.filter(({content}) => content.toUpperCase().includes(query.trim().toUpperCase()));
-  
- }
+export const getTaskById = (state, taskId) =>
+  selectTasks(state).taskList.find(({ id }) => id === taskId);
+
+export const selectTasksByQuery = (state, query) => {
+  const taskList = selectTasks(state);
+  if (!query || query.trim() === "") {
+    return taskList.taskList;
+  }
+  return taskList.taskList.filter(({ content }) =>
+    content.toUpperCase().includes(query.trim().toUpperCase())
+  );
+};
 
 export default taskListSlice.reducer;
-

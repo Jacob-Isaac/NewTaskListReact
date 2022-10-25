@@ -18,8 +18,8 @@ export const Navigation = styled.div`
 
 export const Button = styled.button`
   -webkit-tap-highlight-color: transparent;
- @media (min-width: ${({ theme }) => theme.breakpoint.notebook}px) {
-  width: 14%;
+  @media (min-width: ${({ theme }) => theme.breakpoint.notebook}px) {
+    width: 14%;
   }
   font-size: 15px;
   background-color: transparent;
@@ -40,12 +40,12 @@ export const Button = styled.button`
   &:active {
     color: ${({ theme }) => theme.color.gray};
     transform: scale(0.8);
-    background-color:none;
+    background-color: none;
   }
   ${({ disabled }) =>
     disabled === true &&
     css`
-     color: ${({ theme }) => theme.color.niceGray};
+      color: ${({ theme }) => theme.color.niceGray};
       &:hover {
         color: ${({ theme }) => theme.color.niceGray};
         cursor: auto;
@@ -55,33 +55,31 @@ export const Button = styled.button`
         transform: none;
       }
     `}
-    ${({ Mobile }) =>
+  ${({ Mobile }) =>
     Mobile &&
     css`
-font-size: 23px;
-font-weight: normal;
-      `};
-    
+      font-size: 23px;
+      font-weight: normal;
+    `};
 `;
 export const Span = styled.span`
- color:${({ theme }) => theme.color.black};
- &:hover {
-  color: ${({ theme }) => theme.color.gray};
-      }
- ${({ Red }) =>
+  color: ${({ theme }) => theme.color.black};
+  &:hover {
+    color: ${({ theme }) => theme.color.gray};
+  }
+  ${({ Red }) =>
     Red &&
     css`
       color: ${({ theme }) => theme.color.red};
       &:hover {
         color: ${({ theme }) => theme.color.niceRed};
       }
-      `};
-     
-    `;
-    
+    `};
+`;
+
 export const StyledNavLink = styled(NavLink)`
- @media (min-width: ${({ theme }) => theme.breakpoint.pc}px) {
-  width: 14%;
+  @media (min-width: ${({ theme }) => theme.breakpoint.pc}px) {
+    width: 14%;
   }
   font-size: 15px;
   background-color: transparent;
@@ -97,7 +95,7 @@ export const StyledNavLink = styled(NavLink)`
   -webkit-tap-highlight-color: transparent;
   &:visited {
     color: ${({ theme }) => theme.color.black};
-    background-color:none;
+    background-color: none;
   }
   &:hover {
     color: ${({ theme }) => theme.color.gray};
@@ -106,7 +104,7 @@ export const StyledNavLink = styled(NavLink)`
   &:active {
     color: ${({ theme }) => theme.color.gray};
     transform: scale(0.8);
-    background-color:none;
+    background-color: none;
     color: ${({ theme }) => theme.color.black};
   }
   ${({ disabled }) =>
@@ -121,7 +119,7 @@ export const StyledNavLink = styled(NavLink)`
         transform: none;
       }
     `}
-    background-color:none;
+  background-color:none;
 `;
 
 export const Img = styled.img`
@@ -129,22 +127,21 @@ export const Img = styled.img`
   height: 70px;
   -webkit-tap-highlight-color: transparent;
   ${({ click }) =>
-   click === true &&
+    click === true &&
     css`
-  transition-duration: 0.5s;
-  transition-property: transform;
-  transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
-    -webkit-tap-highlight-color: transparent;
+      transition-duration: 0.5s;
+      transition-property: transform;
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -webkit-tap-highlight-color: transparent;
     `}
-    ${({ klik }) =>
-   klik === true &&
+  ${({ klik }) =>
+    klik === true &&
     css`
-  transition-duration: 0.5s;
-  transition-property: transform;
-  transform: rotate(-180deg);
-    -webkit-transform: rotate(-180deg);
-    -webkit-tap-highlight-color: transparent;
+      transition-duration: 0.5s;
+      transition-property: transform;
+      transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+      -webkit-tap-highlight-color: transparent;
     `}
-
 `;

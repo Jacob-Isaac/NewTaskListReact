@@ -1,4 +1,4 @@
-import {H1, Box, Wrapper, Title, Space} from "./styled";
+import { H1, Box, Wrapper, Title, Space } from "./styled";
 
 const MainContainer = ({ appTitle, buttons, title, children }) => {
   return (

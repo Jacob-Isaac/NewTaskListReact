@@ -16,11 +16,11 @@ const Form = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    
-if (newTaskTrimmed === "") {
-  focus.current.focus();
-  return null;
-}
+
+    if (newTaskTrimmed === "") {
+      focus.current.focus();
+      return null;
+    }
 
     dispatch(
       addTask({
@@ -35,20 +35,18 @@ if (newTaskTrimmed === "") {
   };
 
   return (
-   
     <FormWrapper onSubmit={onFormSubmit}>
-          <Input
-          placeholder="Co jest do zrobienia?" 
-            id="input"
-            ref={focus}
-            value={newTask}
-            onChange={(event) => setNewTask(event.target.value)}
-            maxLength={178}
-          />
+      <Input
+        placeholder="Co jest do zrobienia?"
+        id="input"
+        ref={focus}
+        value={newTask}
+        onChange={(event) => setNewTask(event.target.value)}
+        maxLength={178}
+      />
       <SubmitButton>DODAJ !</SubmitButton>
     </FormWrapper>
   );
 };
 
 export default Form;
-

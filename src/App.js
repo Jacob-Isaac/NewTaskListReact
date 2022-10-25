@@ -10,7 +10,7 @@ const App = () => (
   <HashRouter>
     <Switch>
       <Route path="/zadania/:id">
-      <AuthorNavigation/>
+        <AuthorNavigation />
         <MainContainer title={<>Szczegóły zadania</>}>
           <SingleTaskPage />
         </MainContainer>
@@ -19,7 +19,7 @@ const App = () => (
         <TaskListPage />
       </Route>
       <Route path="/author">
-        <AuthorNavigation/>
+        <AuthorNavigation />
         <MainContainer title={<>O autorze</>}>
           <AuthorPage />
         </MainContainer>

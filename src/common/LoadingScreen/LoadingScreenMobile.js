@@ -1,6 +1,5 @@
 import cog from "./cog.png";
-import {Cog} from "../HeaderMobile/styled.js";
-
+import { Cog } from "../NavigationMobile/styled.js";
 
 const LoadingScreen = () => (
   <>
