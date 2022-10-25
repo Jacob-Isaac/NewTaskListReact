@@ -7,7 +7,7 @@ export const StandardBox = css`
   padding-bottom: 20px;
   background-color: ${({ theme }) => theme.color.transparentWhite};
   min-width: 250px;
-  @media (max-width: 800px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: 90%;
   }
 `;

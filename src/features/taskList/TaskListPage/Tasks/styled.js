@@ -40,13 +40,13 @@ export const Button = styled.button`
 export const Content = styled.span`
  text-align: justify;
   flex-grow: 1;
-  margin: 5px;
+  margin: 5px 15px 5px 15px;
   ${({ done }) =>
     done &&
     css`
       text-decoration: line-through;
     `}
-  @media (max-width: 800px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 12px;
   }
 `;

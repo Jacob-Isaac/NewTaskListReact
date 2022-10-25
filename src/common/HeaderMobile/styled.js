@@ -22,16 +22,16 @@ export const WrapperUl = styled.ul`
   position: absolute;
   top: 65%;
   height: 100%;
-  @media (min-width: 550px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     left: 50%;
   }
-  @media (max-width: 550px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     left: 49%;
   }
-  @media (max-width: 475px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileSmaller}px) {
     left: 48%;
   }
-  @media (max-width: 400px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileSmalest}px) {
     left: 47%;
   }
   transform: translate(-54%, -50%);
@@ -112,13 +112,13 @@ export const Cog = styled.img`
   position: fixed;
   z-index: 1;
 
-  @media (min-width: 550px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     left: 45%;
     top: 50%;
     bottom: 50%;
     right: 55%;
   }
-  @media (max-width: 550px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
     left: 42%;
     top: 50%;
     bottom: 50%;
@@ -147,7 +147,7 @@ export const Content = styled.div`
   height: 80px;
   color: ${({ theme }) => theme.color.black};
   margin-bottom: 30px;
-  background-color: ${({ theme }) => theme.color.transparentWhite};;
+  background-color: ${({ theme }) => theme.color.transparentWhite};
   box-shadow: 0.5px 0px 8px;
 `;
 

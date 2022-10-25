@@ -10,7 +10,7 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.color.niceGray};
     cursor: pointer;
   }
-  @media (max-width: 800px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 14px;
     margin: 15px;
   }

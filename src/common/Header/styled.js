@@ -10,7 +10,7 @@ export const Navigation = styled.div`
   margin-bottom: 50px;
   background-color: ${({ theme }) => theme.color.transparentWhite};
   box-shadow: 0.5px 0px 8px;
-  @media (max-width: 850px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: flex;
     flex-direction: column;
   }
@@ -18,7 +18,7 @@ export const Navigation = styled.div`
 
 export const Button = styled.button`
   -webkit-tap-highlight-color: transparent;
- @media (min-width: 1280px) {
+ @media (min-width: ${({ theme }) => theme.breakpoint.notebook}px) {
   width: 14%;
   }
   font-size: 15px;
@@ -80,7 +80,7 @@ export const Span = styled.span`
     `;
     
 export const StyledNavLink = styled(NavLink)`
- @media (min-width: 1380px) {
+ @media (min-width: ${({ theme }) => theme.breakpoint.pc}px) {
   width: 14%;
   }
   font-size: 15px;

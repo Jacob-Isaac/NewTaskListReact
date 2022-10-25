@@ -8,14 +8,14 @@ export const SubmitButton = styled.button`
   padding: 10px;
   margin-left: 12px;
 
-  @media (max-width: 800px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     align-self: stretch;
     margin-left: 0px;
     &:hover {
       background-color: ${({ theme }) => theme.color.tealBrighter};
     }
   }
-  @media (min-width: 800px) {
+  @media (min-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     &:hover {
       transition: all 0.2s ease 0s;
       transform: scale(1.1);
@@ -34,7 +34,7 @@ export const FormWrapper = styled.form`
   margin-left: 15px;
   margin-right: 15px;
   gap: 20px;
-  @media (max-width: 800px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: flex;
     flex-direction: column;
   }

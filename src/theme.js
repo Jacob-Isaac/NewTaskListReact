@@ -17,14 +17,11 @@ export const theme = {
         niceRed: "#8a0000",
     },
     breakpoint: {
-        maxContentSize: 1368,
-        tabletMax: 968,
-        mobileMax: 650,
-        between: 867,
-    },
-    fontSize: {
-        regular: 400,
-        medium: 500,
-        bold: 600,
+        notebook: 1280,
+        pc: 1380,
+        tablet: 800,
+        mobile: 550,
+        mobileSmaller: 475,
+        mobileSmalest: 400,
     },
 };
